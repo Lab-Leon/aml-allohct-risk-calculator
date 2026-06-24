@@ -1,0 +1,1049 @@
+{
+  "model_type": "CoxPH",
+  "created_at": "2026-06-23",
+  "features": [
+    "age",
+    "sex",
+    "kps",
+    "hct_ci",
+    "cytogenetics",
+    "mrd",
+    "donor_type",
+    "graft_type",
+    "conditioning_intensity",
+    "cmv"
+  ],
+  "numeric_features": [
+    "age"
+  ],
+  "categorical_features": [
+    "sex",
+    "kps",
+    "hct_ci",
+    "cytogenetics",
+    "mrd",
+    "donor_type",
+    "graft_type",
+    "conditioning_intensity",
+    "cmv"
+  ],
+  "horizons": [
+    12.0,
+    24.0,
+    36.0
+  ],
+  "outcome_labels": {
+    "OS": "Overall survival",
+    "Relapse": "Relapse",
+    "DFS": "Disease-free survival",
+    "TRM_NRM": "TRM/NRM"
+  },
+  "outcome_descriptions": {
+    "OS": "Death from any cause",
+    "Relapse": "Recorded relapse",
+    "DFS": "Relapse or death",
+    "TRM_NRM": "Non-relapse/treatment-related mortality"
+  },
+  "feature_metadata": {
+    "age": {
+      "label": "Age",
+      "description": "Age at HCT",
+      "type": "number",
+      "median": 54.2943189596167,
+      "min": 19.98598220396988,
+      "max": 72.4271047227926
+    },
+    "sex": {
+      "label": "Sex",
+      "description": "Recipient sex",
+      "type": "category",
+      "options": [
+        {
+          "value": 1.0,
+          "label": "Male"
+        },
+        {
+          "value": 2.0,
+          "label": "Female"
+        }
+      ]
+    },
+    "kps": {
+      "label": "KPS",
+      "description": "Karnofsky performance score",
+      "type": "category",
+      "options": [
+        {
+          "value": 0.0,
+          "label": "KPS <90"
+        },
+        {
+          "value": 1.0,
+          "label": "KPS >=90"
+        }
+      ]
+    },
+    "hct_ci": {
+      "label": "HCT-CI",
+      "description": "Comorbidity burden",
+      "type": "category",
+      "options": [
+        {
+          "value": 0.0,
+          "label": "HCT-CI 0"
+        },
+        {
+          "value": 1.0,
+          "label": "HCT-CI 1-2"
+        },
+        {
+          "value": 2.0,
+          "label": "HCT-CI >=3"
+        },
+        {
+          "value": 98.0,
+          "label": "Not available"
+        }
+      ]
+    },
+    "cytogenetics": {
+      "label": "Cytogenetics",
+      "description": "Cytogenetic or ELN risk",
+      "type": "category",
+      "options": [
+        {
+          "value": 2.0,
+          "label": "Favorable"
+        },
+        {
+          "value": 3.0,
+          "label": "Intermediate"
+        },
+        {
+          "value": 4.0,
+          "label": "Poor/adverse"
+        },
+        {
+          "value": 8.0,
+          "label": "Not tested/unknown"
+        }
+      ]
+    },
+    "mrd": {
+      "label": "MRD",
+      "description": "Measurable residual disease before HCT",
+      "type": "category",
+      "options": [
+        {
+          "value": 0.0,
+          "label": "MRD negative"
+        },
+        {
+          "value": 1.0,
+          "label": "MRD positive"
+        },
+        {
+          "value": 98.0,
+          "label": "Not available/unknown"
+        }
+      ]
+    },
+    "donor_type": {
+      "label": "Donor type",
+      "description": "Stem-cell donor category",
+      "type": "category",
+      "options": [
+        {
+          "value": 1.0,
+          "label": "HLA-identical sibling"
+        },
+        {
+          "value": 2.0,
+          "label": "Other/haploidentical related"
+        },
+        {
+          "value": 3.0,
+          "label": "Matched unrelated donor"
+        },
+        {
+          "value": 4.0,
+          "label": "Mismatched/other unrelated donor"
+        },
+        {
+          "value": 5.0,
+          "label": "Cord blood donor"
+        }
+      ]
+    },
+    "graft_type": {
+      "label": "Graft type",
+      "description": "Stem-cell graft source",
+      "type": "category",
+      "options": [
+        {
+          "value": 1.0,
+          "label": "Bone marrow"
+        },
+        {
+          "value": 2.0,
+          "label": "Peripheral blood stem cells"
+        },
+        {
+          "value": 3.0,
+          "label": "Cord blood"
+        }
+      ]
+    },
+    "conditioning_intensity": {
+      "label": "Conditioning",
+      "description": "Conditioning intensity",
+      "type": "category",
+      "options": [
+        {
+          "value": 1.0,
+          "label": "MAC, TBI-based"
+        },
+        {
+          "value": 2.0,
+          "label": "MAC, chemotherapy-based or unspecified"
+        },
+        {
+          "value": 3.0,
+          "label": "RIC/NMA"
+        }
+      ]
+    },
+    "cmv": {
+      "label": "CMV status",
+      "description": "Recipient/donor CMV status",
+      "type": "category",
+      "options": [
+        {
+          "value": 0.0,
+          "label": "Recipient CMV negative"
+        },
+        {
+          "value": 1.0,
+          "label": "Recipient CMV positive"
+        }
+      ]
+    }
+  },
+  "training_datasets": [
+    "P-5329",
+    "P-5435",
+    "P-5603",
+    "P-5445",
+    "P-5531"
+  ],
+  "external_validation_datasets": [
+    "P-5166",
+    "P-5281",
+    "P-5526",
+    "P-5726",
+    "P-6238",
+    "P-5282",
+    "P-5261"
+  ],
+  "training_summary": {
+    "OS": {
+      "n": 16995,
+      "events": 9618,
+      "event_rate": 0.5659311562224184
+    },
+    "Relapse": {
+      "n": 16845,
+      "events": 6510,
+      "event_rate": 0.38646482635796975
+    },
+    "DFS": {
+      "n": 16951,
+      "events": 10538,
+      "event_rate": 0.6216742375081116
+    },
+    "TRM_NRM": {
+      "n": 16929,
+      "events": 3924,
+      "event_rate": 0.23179160021265285
+    }
+  },
+  "outcomes": {
+    "OS": {
+      "numeric": {
+        "age": {
+          "median": 54.2943189596167,
+          "mean": 53.17047849359406,
+          "scale": 9.740246698715444
+        }
+      },
+      "categorical_features": [
+        "sex",
+        "kps",
+        "hct_ci",
+        "cytogenetics",
+        "mrd",
+        "donor_type",
+        "graft_type",
+        "conditioning_intensity",
+        "cmv"
+      ],
+      "categories": {
+        "sex": [
+          "1",
+          "2"
+        ],
+        "kps": [
+          "0.0",
+          "1.0",
+          "2.0",
+          "Missing/Unknown"
+        ],
+        "hct_ci": [
+          "0.0",
+          "1.0",
+          "2.0",
+          "3.0",
+          "98.0",
+          "Missing/Unknown"
+        ],
+        "cytogenetics": [
+          "2.0",
+          "3.0",
+          "4.0",
+          "8.0",
+          "Missing/Unknown"
+        ],
+        "mrd": [
+          "0.0",
+          "1.0",
+          "2.0",
+          "98.0",
+          "Missing/Unknown"
+        ],
+        "donor_type": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "9",
+          "Missing/Unknown"
+        ],
+        "graft_type": [
+          "1",
+          "2",
+          "22",
+          "23",
+          "Missing/Unknown"
+        ],
+        "conditioning_intensity": [
+          "1",
+          "1.0",
+          "2",
+          "2.0",
+          "3",
+          "3.0",
+          "Missing/Unknown"
+        ],
+        "cmv": [
+          "0.0",
+          "1.0",
+          "2.0",
+          "3.0",
+          "Missing/Unknown"
+        ]
+      },
+      "feature_order_encoded": [
+        "num__age",
+        "cat__sex_1",
+        "cat__sex_2",
+        "cat__kps_0.0",
+        "cat__kps_1.0",
+        "cat__kps_2.0",
+        "cat__kps_Missing/Unknown",
+        "cat__hct_ci_0.0",
+        "cat__hct_ci_1.0",
+        "cat__hct_ci_2.0",
+        "cat__hct_ci_3.0",
+        "cat__hct_ci_98.0",
+        "cat__hct_ci_Missing/Unknown",
+        "cat__cytogenetics_2.0",
+        "cat__cytogenetics_3.0",
+        "cat__cytogenetics_4.0",
+        "cat__cytogenetics_8.0",
+        "cat__cytogenetics_Missing/Unknown",
+        "cat__mrd_0.0",
+        "cat__mrd_1.0",
+        "cat__mrd_2.0",
+        "cat__mrd_98.0",
+        "cat__mrd_Missing/Unknown",
+        "cat__donor_type_1",
+        "cat__donor_type_2",
+        "cat__donor_type_3",
+        "cat__donor_type_4",
+        "cat__donor_type_5",
+        "cat__donor_type_9",
+        "cat__donor_type_Missing/Unknown",
+        "cat__graft_type_1",
+        "cat__graft_type_2",
+        "cat__graft_type_22",
+        "cat__graft_type_23",
+        "cat__graft_type_Missing/Unknown",
+        "cat__conditioning_intensity_1",
+        "cat__conditioning_intensity_1.0",
+        "cat__conditioning_intensity_2",
+        "cat__conditioning_intensity_2.0",
+        "cat__conditioning_intensity_3",
+        "cat__conditioning_intensity_3.0",
+        "cat__conditioning_intensity_Missing/Unknown",
+        "cat__cmv_0.0",
+        "cat__cmv_1.0",
+        "cat__cmv_2.0",
+        "cat__cmv_3.0",
+        "cat__cmv_Missing/Unknown"
+      ],
+      "coef": [
+        0.12607492246903945,
+        0.04454803668208966,
+        -0.044548036950967936,
+        0.09484196648869554,
+        -0.15199327993691042,
+        0.07863285225762959,
+        -0.021481538944813874,
+        -0.19817942969769362,
+        -0.09205993870805669,
+        0.032150372959852964,
+        0.14387288167330187,
+        0.09145019688830604,
+        0.022765916668582895,
+        -0.4192643913853465,
+        -0.07256145053403133,
+        0.27970677617039796,
+        0.1914801502846932,
+        0.020638915213864965,
+        -0.2772546303696035,
+        -0.19840708961652345,
+        0.2452579031259343,
+        0.38390647604816264,
+        -0.15350265947958966,
+        -0.04738402140433222,
+        -0.01084543794300531,
+        -0.01705438353929213,
+        0.14696829109344747,
+        0.35348333235195817,
+        -0.011193583270659,
+        -0.4139741975095134,
+        -0.06056337080541847,
+        -0.11423474122361729,
+        -0.10437390740424957,
+        0.38656714795830366,
+        -0.1073951287721326,
+        0.22282784488709198,
+        -0.34310724911626334,
+        0.22790579852057177,
+        -0.20857856694392063,
+        0.24223015069322784,
+        -0.11224776136435334,
+        -0.029030216936686868,
+        0.012772557782882851,
+        0.06057201023436595,
+        0.11261585595100976,
+        -0.08640562657336646,
+        -0.09955479762081137
+      ],
+      "baseline_survival": {
+        "12": 0.5498977694869849,
+        "24": 0.4262708906670655,
+        "36": 0.3654592491097263
+      },
+      "risk_thresholds": {
+        "low_intermediate": -0.49722241900346753,
+        "intermediate_high": -0.13415407502277907
+      }
+    },
+    "Relapse": {
+      "numeric": {
+        "age": {
+          "median": 54.2943189596167,
+          "mean": 53.16422988601025,
+          "scale": 9.760147692344114
+        }
+      },
+      "categorical_features": [
+        "sex",
+        "kps",
+        "hct_ci",
+        "cytogenetics",
+        "mrd",
+        "donor_type",
+        "graft_type",
+        "conditioning_intensity",
+        "cmv"
+      ],
+      "categories": {
+        "sex": [
+          "1",
+          "2"
+        ],
+        "kps": [
+          "0.0",
+          "1.0",
+          "2.0",
+          "Missing/Unknown"
+        ],
+        "hct_ci": [
+          "0.0",
+          "1.0",
+          "2.0",
+          "3.0",
+          "98.0",
+          "Missing/Unknown"
+        ],
+        "cytogenetics": [
+          "2.0",
+          "3.0",
+          "4.0",
+          "8.0",
+          "Missing/Unknown"
+        ],
+        "mrd": [
+          "0.0",
+          "1.0",
+          "2.0",
+          "98.0",
+          "Missing/Unknown"
+        ],
+        "donor_type": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "9",
+          "Missing/Unknown"
+        ],
+        "graft_type": [
+          "1",
+          "2",
+          "22",
+          "23",
+          "Missing/Unknown"
+        ],
+        "conditioning_intensity": [
+          "1",
+          "1.0",
+          "2",
+          "2.0",
+          "3",
+          "3.0",
+          "Missing/Unknown"
+        ],
+        "cmv": [
+          "0.0",
+          "1.0",
+          "2.0",
+          "3.0",
+          "Missing/Unknown"
+        ]
+      },
+      "feature_order_encoded": [
+        "num__age",
+        "cat__sex_1",
+        "cat__sex_2",
+        "cat__kps_0.0",
+        "cat__kps_1.0",
+        "cat__kps_2.0",
+        "cat__kps_Missing/Unknown",
+        "cat__hct_ci_0.0",
+        "cat__hct_ci_1.0",
+        "cat__hct_ci_2.0",
+        "cat__hct_ci_3.0",
+        "cat__hct_ci_98.0",
+        "cat__hct_ci_Missing/Unknown",
+        "cat__cytogenetics_2.0",
+        "cat__cytogenetics_3.0",
+        "cat__cytogenetics_4.0",
+        "cat__cytogenetics_8.0",
+        "cat__cytogenetics_Missing/Unknown",
+        "cat__mrd_0.0",
+        "cat__mrd_1.0",
+        "cat__mrd_2.0",
+        "cat__mrd_98.0",
+        "cat__mrd_Missing/Unknown",
+        "cat__donor_type_1",
+        "cat__donor_type_2",
+        "cat__donor_type_3",
+        "cat__donor_type_4",
+        "cat__donor_type_5",
+        "cat__donor_type_9",
+        "cat__donor_type_Missing/Unknown",
+        "cat__graft_type_1",
+        "cat__graft_type_2",
+        "cat__graft_type_22",
+        "cat__graft_type_23",
+        "cat__graft_type_Missing/Unknown",
+        "cat__conditioning_intensity_1",
+        "cat__conditioning_intensity_1.0",
+        "cat__conditioning_intensity_2",
+        "cat__conditioning_intensity_2.0",
+        "cat__conditioning_intensity_3",
+        "cat__conditioning_intensity_3.0",
+        "cat__conditioning_intensity_Missing/Unknown",
+        "cat__cmv_0.0",
+        "cat__cmv_1.0",
+        "cat__cmv_2.0",
+        "cat__cmv_3.0",
+        "cat__cmv_Missing/Unknown"
+      ],
+      "coef": [
+        0.04274058609708539,
+        0.008912585535531035,
+        -0.008912585488928003,
+        0.05647948475042171,
+        -0.10550064493282767,
+        0.10288896070135352,
+        -0.05386780051608052,
+        -0.0478124603196693,
+        -0.012537175379298817,
+        0.042513492692804064,
+        0.015452264448661554,
+        -0.048014521732272615,
+        0.05039840035886496,
+        -0.4914816013732249,
+        -0.12071986623782434,
+        0.3906600056634748,
+        0.20318033796714494,
+        0.018361124064486208,
+        -0.46640085545343435,
+        -0.23644087304547,
+        0.2529402626440958,
+        0.6827466725051675,
+        -0.23284520649329418,
+        0.1352416708833911,
+        0.022479606334857873,
+        -0.009928477538214006,
+        -0.005209056520553598,
+        -0.10082170789001725,
+        0.02669117006097884,
+        -0.06845320527679477,
+        0.05338344593574433,
+        -0.08090471759754171,
+        -0.0826341562749758,
+        0.1247100311290231,
+        -0.014554603113352478,
+        -0.04415155292836431,
+        -0.46561872197962517,
+        0.12975232980555812,
+        -0.14188879599249637,
+        0.3300261961331912,
+        0.17935476822055663,
+        0.01252577678576036,
+        0.028720356649429925,
+        -0.020657787282653394,
+        0.09714057399245073,
+        -0.023416512840084627,
+        -0.08178663047392289
+      ],
+      "baseline_survival": {
+        "12": 0.5842703501726363,
+        "24": 0.5109945330772236,
+        "36": 0.46868179103698787
+      },
+      "risk_thresholds": {
+        "low_intermediate": -0.5208998554999877,
+        "intermediate_high": -0.16039530677193764
+      }
+    },
+    "DFS": {
+      "numeric": {
+        "age": {
+          "median": 54.28062970568104,
+          "mean": 53.162041041838556,
+          "scale": 9.747463719681585
+        }
+      },
+      "categorical_features": [
+        "sex",
+        "kps",
+        "hct_ci",
+        "cytogenetics",
+        "mrd",
+        "donor_type",
+        "graft_type",
+        "conditioning_intensity",
+        "cmv"
+      ],
+      "categories": {
+        "sex": [
+          "1",
+          "2"
+        ],
+        "kps": [
+          "0.0",
+          "1.0",
+          "2.0",
+          "Missing/Unknown"
+        ],
+        "hct_ci": [
+          "0.0",
+          "1.0",
+          "2.0",
+          "3.0",
+          "98.0",
+          "Missing/Unknown"
+        ],
+        "cytogenetics": [
+          "2.0",
+          "3.0",
+          "4.0",
+          "8.0",
+          "Missing/Unknown"
+        ],
+        "mrd": [
+          "0.0",
+          "1.0",
+          "2.0",
+          "98.0",
+          "Missing/Unknown"
+        ],
+        "donor_type": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "9",
+          "Missing/Unknown"
+        ],
+        "graft_type": [
+          "1",
+          "2",
+          "22",
+          "23",
+          "Missing/Unknown"
+        ],
+        "conditioning_intensity": [
+          "1",
+          "1.0",
+          "2",
+          "2.0",
+          "3",
+          "3.0",
+          "Missing/Unknown"
+        ],
+        "cmv": [
+          "0.0",
+          "1.0",
+          "2.0",
+          "3.0",
+          "Missing/Unknown"
+        ]
+      },
+      "feature_order_encoded": [
+        "num__age",
+        "cat__sex_1",
+        "cat__sex_2",
+        "cat__kps_0.0",
+        "cat__kps_1.0",
+        "cat__kps_2.0",
+        "cat__kps_Missing/Unknown",
+        "cat__hct_ci_0.0",
+        "cat__hct_ci_1.0",
+        "cat__hct_ci_2.0",
+        "cat__hct_ci_3.0",
+        "cat__hct_ci_98.0",
+        "cat__hct_ci_Missing/Unknown",
+        "cat__cytogenetics_2.0",
+        "cat__cytogenetics_3.0",
+        "cat__cytogenetics_4.0",
+        "cat__cytogenetics_8.0",
+        "cat__cytogenetics_Missing/Unknown",
+        "cat__mrd_0.0",
+        "cat__mrd_1.0",
+        "cat__mrd_2.0",
+        "cat__mrd_98.0",
+        "cat__mrd_Missing/Unknown",
+        "cat__donor_type_1",
+        "cat__donor_type_2",
+        "cat__donor_type_3",
+        "cat__donor_type_4",
+        "cat__donor_type_5",
+        "cat__donor_type_9",
+        "cat__donor_type_Missing/Unknown",
+        "cat__graft_type_1",
+        "cat__graft_type_2",
+        "cat__graft_type_22",
+        "cat__graft_type_23",
+        "cat__graft_type_Missing/Unknown",
+        "cat__conditioning_intensity_1",
+        "cat__conditioning_intensity_1.0",
+        "cat__conditioning_intensity_2",
+        "cat__conditioning_intensity_2.0",
+        "cat__conditioning_intensity_3",
+        "cat__conditioning_intensity_3.0",
+        "cat__conditioning_intensity_Missing/Unknown",
+        "cat__cmv_0.0",
+        "cat__cmv_1.0",
+        "cat__cmv_2.0",
+        "cat__cmv_3.0",
+        "cat__cmv_Missing/Unknown"
+      ],
+      "coef": [
+        0.10982285059052271,
+        0.04874683276199185,
+        -0.048746832985309144,
+        0.08222752975172076,
+        -0.129645715886182,
+        0.09959227548728916,
+        -0.05217408951515967,
+        -0.1627546509872837,
+        -0.03803499039643268,
+        0.053222977196231855,
+        0.15037176462813012,
+        0.016442702631340508,
+        -0.01924780327048956,
+        -0.42403181842726817,
+        -0.07158915727275804,
+        0.27371168923078953,
+        0.19648850096603196,
+        0.02542078538598025,
+        -0.3186643552672828,
+        -0.14518712536939857,
+        0.27024409770245217,
+        0.3852843597033408,
+        -0.19167697686290344,
+        -0.03989163945499646,
+        0.01245517400188335,
+        -0.04469461896542932,
+        0.11956314967052617,
+        0.2893224416999542,
+        0.026842449005699764,
+        -0.36359695619733984,
+        -0.034257843461286824,
+        -0.08967036191702252,
+        -0.088194209095132,
+        0.33366138794957406,
+        -0.12153897365915388,
+        0.12030311277990763,
+        -0.317177648162962,
+        0.16671820417131752,
+        -0.1620153184997556,
+        0.21418079763280273,
+        -0.01318689163719312,
+        -0.008822256517635478,
+        0.02685774052970299,
+        0.058608620621529404,
+        0.11418528903108537,
+        -0.10355040804551105,
+        -0.09610124232764278
+      ],
+      "baseline_survival": {
+        "12": 0.5420682666986972,
+        "24": 0.4101775332341991,
+        "36": 0.33924554289438524
+      },
+      "risk_thresholds": {
+        "low_intermediate": -0.48031082888493176,
+        "intermediate_high": -0.16294771933503346
+      }
+    },
+    "TRM_NRM": {
+      "numeric": {
+        "age": {
+          "median": 54.2819986310746,
+          "mean": 53.16120250824911,
+          "scale": 9.753813128860305
+        }
+      },
+      "categorical_features": [
+        "sex",
+        "kps",
+        "hct_ci",
+        "cytogenetics",
+        "mrd",
+        "donor_type",
+        "graft_type",
+        "conditioning_intensity",
+        "cmv"
+      ],
+      "categories": {
+        "sex": [
+          "1",
+          "2"
+        ],
+        "kps": [
+          "0.0",
+          "1.0",
+          "2.0",
+          "Missing/Unknown"
+        ],
+        "hct_ci": [
+          "0.0",
+          "1.0",
+          "2.0",
+          "3.0",
+          "98.0",
+          "Missing/Unknown"
+        ],
+        "cytogenetics": [
+          "2.0",
+          "3.0",
+          "4.0",
+          "8.0",
+          "Missing/Unknown"
+        ],
+        "mrd": [
+          "0.0",
+          "1.0",
+          "2.0",
+          "98.0",
+          "Missing/Unknown"
+        ],
+        "donor_type": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "9",
+          "Missing/Unknown"
+        ],
+        "graft_type": [
+          "1",
+          "2",
+          "22",
+          "23",
+          "Missing/Unknown"
+        ],
+        "conditioning_intensity": [
+          "1",
+          "1.0",
+          "2",
+          "2.0",
+          "3",
+          "3.0",
+          "Missing/Unknown"
+        ],
+        "cmv": [
+          "0.0",
+          "1.0",
+          "2.0",
+          "3.0",
+          "Missing/Unknown"
+        ]
+      },
+      "feature_order_encoded": [
+        "num__age",
+        "cat__sex_1",
+        "cat__sex_2",
+        "cat__kps_0.0",
+        "cat__kps_1.0",
+        "cat__kps_2.0",
+        "cat__kps_Missing/Unknown",
+        "cat__hct_ci_0.0",
+        "cat__hct_ci_1.0",
+        "cat__hct_ci_2.0",
+        "cat__hct_ci_3.0",
+        "cat__hct_ci_98.0",
+        "cat__hct_ci_Missing/Unknown",
+        "cat__cytogenetics_2.0",
+        "cat__cytogenetics_3.0",
+        "cat__cytogenetics_4.0",
+        "cat__cytogenetics_8.0",
+        "cat__cytogenetics_Missing/Unknown",
+        "cat__mrd_0.0",
+        "cat__mrd_1.0",
+        "cat__mrd_2.0",
+        "cat__mrd_98.0",
+        "cat__mrd_Missing/Unknown",
+        "cat__donor_type_1",
+        "cat__donor_type_2",
+        "cat__donor_type_3",
+        "cat__donor_type_4",
+        "cat__donor_type_5",
+        "cat__donor_type_9",
+        "cat__donor_type_Missing/Unknown",
+        "cat__graft_type_1",
+        "cat__graft_type_2",
+        "cat__graft_type_22",
+        "cat__graft_type_23",
+        "cat__graft_type_Missing/Unknown",
+        "cat__conditioning_intensity_1",
+        "cat__conditioning_intensity_1.0",
+        "cat__conditioning_intensity_2",
+        "cat__conditioning_intensity_2.0",
+        "cat__conditioning_intensity_3",
+        "cat__conditioning_intensity_3.0",
+        "cat__conditioning_intensity_Missing/Unknown",
+        "cat__cmv_0.0",
+        "cat__cmv_1.0",
+        "cat__cmv_2.0",
+        "cat__cmv_3.0",
+        "cat__cmv_Missing/Unknown"
+      ],
+      "coef": [
+        0.1807911357531908,
+        0.09567691059871788,
+        -0.09567691045246067,
+        0.09780056901241484,
+        -0.1513928446262653,
+        0.06155548965582127,
+        -0.007963213892554201,
+        -0.2787296991189057,
+        -0.08741253256330822,
+        0.03659124255977235,
+        0.28757821568441566,
+        0.21355182706495146,
+        -0.17157905357773226,
+        -0.28570570202970025,
+        0.0025326703158241536,
+        0.055597874488218624,
+        0.16069922032091755,
+        0.06687593701030523,
+        -0.009650716170197957,
+        -0.05127424670652761,
+        0.22676908041363583,
+        -0.17342350138327634,
+        0.007579383959244639,
+        -0.26109013215381077,
+        -0.0947615222227221,
+        -0.0226017392555966,
+        0.3204207745583238,
+        0.7034912394166793,
+        -0.00798585324826276,
+        -0.6374727670254862,
+        -0.22600334634857353,
+        -0.1507641916914988,
+        -0.08894351992233018,
+        0.5852042979683741,
+        -0.11949323992614087,
+        0.3589026664631042,
+        -0.12908910101534546,
+        0.22401822251838185,
+        -0.22500652490096737,
+        0.08932164483627876,
+        -0.33457801322082553,
+        0.016431105389109194,
+        0.034119948433375694,
+        0.18237390678163207,
+        0.13058954045044213,
+        -0.1607920556592739,
+        -0.18629133993473024
+      ],
+      "baseline_survival": {
+        "12": 0.8066907471618973,
+        "24": 0.7491611903886561,
+        "36": 0.7179988372742907
+      },
+      "risk_thresholds": {
+        "low_intermediate": -0.39380178519862763,
+        "intermediate_high": 0.0019031713968539305
+      }
+    }
+  },
+  "note": "Lightweight web calculator using the locked 10-variable AML allo-HCT feature set. Risk strata are outcome-specific model-score tertiles in the development cohort. The full manuscript-level modeling workflow is retained for local analysis and interpretation.",
+  "validation": {
+    "n_rows_checked_per_outcome": 25,
+    "max_abs_risk_difference_vs_pipeline": 1.1102230246251565e-16
+  }
+}
