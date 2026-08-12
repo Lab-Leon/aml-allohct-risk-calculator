@@ -1,0 +1,59 @@
+{
+  "entries": [
+    {
+      "outcome": "OS",
+      "model": "RSF",
+      "source_model_sha256": "4debe246e28e31a8c87023a39abbaf031911f7cf0725c280f973aa87068de0ce",
+      "calculator_schema_sha256": "0f5a516bf7406953cb2157b349e7ef5dffac57b4417d566c82250fcf0e56f6eb",
+      "compact_parts": [
+        "calculator/compact_rsf/parts/os_rsf_compact.npz.part00",
+        "calculator/compact_rsf/parts/os_rsf_compact.npz.part01",
+        "calculator/compact_rsf/parts/os_rsf_compact.npz.part02",
+        "calculator/compact_rsf/parts/os_rsf_compact.npz.part03",
+        "calculator/compact_rsf/parts/os_rsf_compact.npz.part04"
+      ],
+      "compact_sha256": "d4e16cb27001bc042018fce075d24d91ef4058ca4f9054a6392ee1b9981dc59a",
+      "trees": 500
+    },
+    {
+      "outcome": "Relapse",
+      "model": "RSF",
+      "source_model_sha256": "0fd8b8bd9bfc7007107cdb1e27c8bfc9fa472168220355265b2ab0ead8a19e0a",
+      "calculator_schema_sha256": "0f5a516bf7406953cb2157b349e7ef5dffac57b4417d566c82250fcf0e56f6eb",
+      "compact_parts": [
+        "calculator/compact_rsf/parts/relapse_rsf_compact.npz.part00",
+        "calculator/compact_rsf/parts/relapse_rsf_compact.npz.part01"
+      ],
+      "compact_sha256": "e21a0b1398472631ddd8031841050a914135370bbacd26e152bbd476a8c0072a",
+      "trees": 500
+    },
+    {
+      "outcome": "DFS",
+      "model": "RSF",
+      "source_model_sha256": "f84c262838bb8c301c1115a3b58a48fde49ad37744d73a46fc71dda0bba2f151",
+      "calculator_schema_sha256": "0f5a516bf7406953cb2157b349e7ef5dffac57b4417d566c82250fcf0e56f6eb",
+      "compact_parts": [
+        "calculator/compact_rsf/parts/dfs_rsf_compact.npz.part00",
+        "calculator/compact_rsf/parts/dfs_rsf_compact.npz.part01",
+        "calculator/compact_rsf/parts/dfs_rsf_compact.npz.part02",
+        "calculator/compact_rsf/parts/dfs_rsf_compact.npz.part03",
+        "calculator/compact_rsf/parts/dfs_rsf_compact.npz.part04"
+      ],
+      "compact_sha256": "c3603df59e60a8af51c1542b551a2cf2bf96b1eb561944202b2a84b174460bfe",
+      "trees": 500
+    },
+    {
+      "outcome": "TRM_NRM",
+      "model": "RSF",
+      "source_model_sha256": "b8b6a073910d07b42de260719e2a82c13e045a697e8e11a991484d7acadf2b58",
+      "calculator_schema_sha256": "0f5a516bf7406953cb2157b349e7ef5dffac57b4417d566c82250fcf0e56f6eb",
+      "compact_parts": [
+        "calculator/compact_rsf/parts/trm_nrm_rsf_compact.npz.part00",
+        "calculator/compact_rsf/parts/trm_nrm_rsf_compact.npz.part01",
+        "calculator/compact_rsf/parts/trm_nrm_rsf_compact.npz.part02"
+      ],
+      "compact_sha256": "879eb90c90ae5ced0157cf4f3299a1ed82e5c0a4061fb3a39e4bbb919c1dfb38",
+      "trees": 500
+    }
+  ]
+}

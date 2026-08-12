@@ -1,0 +1,862 @@
+[
+  {
+    "outcome": "DFS",
+    "model": "CoxPH",
+    "model_sha256": "f5f925049f58d9dd8cd92dbc4882f4f38fdb7da10d61eba133560dcd8631a51c",
+    "calculator_schema_sha256": "0f5a516bf7406953cb2157b349e7ef5dffac57b4417d566c82250fcf0e56f6eb",
+    "features": [
+      "age",
+      "sex",
+      "kps",
+      "hct_ci",
+      "cytogenetics",
+      "mrd",
+      "donor_type",
+      "graft_type",
+      "conditioning_intensity",
+      "cmv"
+    ],
+    "categorical_levels": {
+      "sex": [
+        "Male",
+        "Female",
+        "Unknown"
+      ],
+      "kps": [
+        "KPS >= 90",
+        "KPS < 90",
+        "Unknown"
+      ],
+      "hct_ci": [
+        "HCT-CI 0-2",
+        "HCT-CI >=3",
+        "Unknown"
+      ],
+      "cytogenetics": [
+        "Favorable",
+        "Intermediate",
+        "Adverse",
+        "Unknown"
+      ],
+      "mrd": [
+        "Negative",
+        "Positive",
+        "Not assessed",
+        "Unknown"
+      ],
+      "donor_type": [
+        "Matched related",
+        "Other related or haploidentical",
+        "Matched unrelated",
+        "Other or match-unknown unrelated",
+        "Cord blood",
+        "Unknown"
+      ],
+      "graft_type": [
+        "Peripheral blood",
+        "Bone marrow",
+        "Cord blood",
+        "Unknown"
+      ],
+      "conditioning_intensity": [
+        "MAC",
+        "RIC/NMA",
+        "Unknown"
+      ],
+      "cmv": [
+        "Recipient CMV negative",
+        "Recipient CMV positive",
+        "Unknown"
+      ]
+    },
+    "model_file": "models/dfs_coxph.joblib"
+  },
+  {
+    "outcome": "DFS",
+    "model": "Elastic-net Cox",
+    "model_sha256": "8c87d37e9545bef6e8d231bc8714617a3972bd5ae9753e73dfca1b42b885e573",
+    "calculator_schema_sha256": "0f5a516bf7406953cb2157b349e7ef5dffac57b4417d566c82250fcf0e56f6eb",
+    "features": [
+      "age",
+      "sex",
+      "kps",
+      "hct_ci",
+      "cytogenetics",
+      "mrd",
+      "donor_type",
+      "graft_type",
+      "conditioning_intensity",
+      "cmv"
+    ],
+    "categorical_levels": {
+      "sex": [
+        "Male",
+        "Female",
+        "Unknown"
+      ],
+      "kps": [
+        "KPS >= 90",
+        "KPS < 90",
+        "Unknown"
+      ],
+      "hct_ci": [
+        "HCT-CI 0-2",
+        "HCT-CI >=3",
+        "Unknown"
+      ],
+      "cytogenetics": [
+        "Favorable",
+        "Intermediate",
+        "Adverse",
+        "Unknown"
+      ],
+      "mrd": [
+        "Negative",
+        "Positive",
+        "Not assessed",
+        "Unknown"
+      ],
+      "donor_type": [
+        "Matched related",
+        "Other related or haploidentical",
+        "Matched unrelated",
+        "Other or match-unknown unrelated",
+        "Cord blood",
+        "Unknown"
+      ],
+      "graft_type": [
+        "Peripheral blood",
+        "Bone marrow",
+        "Cord blood",
+        "Unknown"
+      ],
+      "conditioning_intensity": [
+        "MAC",
+        "RIC/NMA",
+        "Unknown"
+      ],
+      "cmv": [
+        "Recipient CMV negative",
+        "Recipient CMV positive",
+        "Unknown"
+      ]
+    },
+    "model_file": "models/dfs_elastic_net_cox.joblib"
+  },
+  {
+    "outcome": "DFS",
+    "model": "RSF",
+    "model_sha256": "f84c262838bb8c301c1115a3b58a48fde49ad37744d73a46fc71dda0bba2f151",
+    "calculator_schema_sha256": "0f5a516bf7406953cb2157b349e7ef5dffac57b4417d566c82250fcf0e56f6eb",
+    "features": [
+      "age",
+      "sex",
+      "kps",
+      "hct_ci",
+      "cytogenetics",
+      "mrd",
+      "donor_type",
+      "graft_type",
+      "conditioning_intensity",
+      "cmv"
+    ],
+    "categorical_levels": {
+      "sex": [
+        "Male",
+        "Female",
+        "Unknown"
+      ],
+      "kps": [
+        "KPS >= 90",
+        "KPS < 90",
+        "Unknown"
+      ],
+      "hct_ci": [
+        "HCT-CI 0-2",
+        "HCT-CI >=3",
+        "Unknown"
+      ],
+      "cytogenetics": [
+        "Favorable",
+        "Intermediate",
+        "Adverse",
+        "Unknown"
+      ],
+      "mrd": [
+        "Negative",
+        "Positive",
+        "Not assessed",
+        "Unknown"
+      ],
+      "donor_type": [
+        "Matched related",
+        "Other related or haploidentical",
+        "Matched unrelated",
+        "Other or match-unknown unrelated",
+        "Cord blood",
+        "Unknown"
+      ],
+      "graft_type": [
+        "Peripheral blood",
+        "Bone marrow",
+        "Cord blood",
+        "Unknown"
+      ],
+      "conditioning_intensity": [
+        "MAC",
+        "RIC/NMA",
+        "Unknown"
+      ],
+      "cmv": [
+        "Recipient CMV negative",
+        "Recipient CMV positive",
+        "Unknown"
+      ]
+    }
+  },
+  {
+    "outcome": "OS",
+    "model": "CoxPH",
+    "model_sha256": "86005fa4ef56eb94feb09dd19a5c81dacc30472e6499473258eb0126fff92da4",
+    "calculator_schema_sha256": "0f5a516bf7406953cb2157b349e7ef5dffac57b4417d566c82250fcf0e56f6eb",
+    "features": [
+      "age",
+      "sex",
+      "kps",
+      "hct_ci",
+      "cytogenetics",
+      "mrd",
+      "donor_type",
+      "graft_type",
+      "conditioning_intensity",
+      "cmv"
+    ],
+    "categorical_levels": {
+      "sex": [
+        "Male",
+        "Female",
+        "Unknown"
+      ],
+      "kps": [
+        "KPS >= 90",
+        "KPS < 90",
+        "Unknown"
+      ],
+      "hct_ci": [
+        "HCT-CI 0-2",
+        "HCT-CI >=3",
+        "Unknown"
+      ],
+      "cytogenetics": [
+        "Favorable",
+        "Intermediate",
+        "Adverse",
+        "Unknown"
+      ],
+      "mrd": [
+        "Negative",
+        "Positive",
+        "Not assessed",
+        "Unknown"
+      ],
+      "donor_type": [
+        "Matched related",
+        "Other related or haploidentical",
+        "Matched unrelated",
+        "Other or match-unknown unrelated",
+        "Cord blood",
+        "Unknown"
+      ],
+      "graft_type": [
+        "Peripheral blood",
+        "Bone marrow",
+        "Cord blood",
+        "Unknown"
+      ],
+      "conditioning_intensity": [
+        "MAC",
+        "RIC/NMA",
+        "Unknown"
+      ],
+      "cmv": [
+        "Recipient CMV negative",
+        "Recipient CMV positive",
+        "Unknown"
+      ]
+    },
+    "model_file": "models/os_coxph.joblib"
+  },
+  {
+    "outcome": "OS",
+    "model": "Elastic-net Cox",
+    "model_sha256": "0a36281157f595f0b4cc3926e9f403b0b69305f423790f5532217d5bd104d26e",
+    "calculator_schema_sha256": "0f5a516bf7406953cb2157b349e7ef5dffac57b4417d566c82250fcf0e56f6eb",
+    "features": [
+      "age",
+      "sex",
+      "kps",
+      "hct_ci",
+      "cytogenetics",
+      "mrd",
+      "donor_type",
+      "graft_type",
+      "conditioning_intensity",
+      "cmv"
+    ],
+    "categorical_levels": {
+      "sex": [
+        "Male",
+        "Female",
+        "Unknown"
+      ],
+      "kps": [
+        "KPS >= 90",
+        "KPS < 90",
+        "Unknown"
+      ],
+      "hct_ci": [
+        "HCT-CI 0-2",
+        "HCT-CI >=3",
+        "Unknown"
+      ],
+      "cytogenetics": [
+        "Favorable",
+        "Intermediate",
+        "Adverse",
+        "Unknown"
+      ],
+      "mrd": [
+        "Negative",
+        "Positive",
+        "Not assessed",
+        "Unknown"
+      ],
+      "donor_type": [
+        "Matched related",
+        "Other related or haploidentical",
+        "Matched unrelated",
+        "Other or match-unknown unrelated",
+        "Cord blood",
+        "Unknown"
+      ],
+      "graft_type": [
+        "Peripheral blood",
+        "Bone marrow",
+        "Cord blood",
+        "Unknown"
+      ],
+      "conditioning_intensity": [
+        "MAC",
+        "RIC/NMA",
+        "Unknown"
+      ],
+      "cmv": [
+        "Recipient CMV negative",
+        "Recipient CMV positive",
+        "Unknown"
+      ]
+    },
+    "model_file": "models/os_elastic_net_cox.joblib"
+  },
+  {
+    "outcome": "OS",
+    "model": "RSF",
+    "model_sha256": "4debe246e28e31a8c87023a39abbaf031911f7cf0725c280f973aa87068de0ce",
+    "calculator_schema_sha256": "0f5a516bf7406953cb2157b349e7ef5dffac57b4417d566c82250fcf0e56f6eb",
+    "features": [
+      "age",
+      "sex",
+      "kps",
+      "hct_ci",
+      "cytogenetics",
+      "mrd",
+      "donor_type",
+      "graft_type",
+      "conditioning_intensity",
+      "cmv"
+    ],
+    "categorical_levels": {
+      "sex": [
+        "Male",
+        "Female",
+        "Unknown"
+      ],
+      "kps": [
+        "KPS >= 90",
+        "KPS < 90",
+        "Unknown"
+      ],
+      "hct_ci": [
+        "HCT-CI 0-2",
+        "HCT-CI >=3",
+        "Unknown"
+      ],
+      "cytogenetics": [
+        "Favorable",
+        "Intermediate",
+        "Adverse",
+        "Unknown"
+      ],
+      "mrd": [
+        "Negative",
+        "Positive",
+        "Not assessed",
+        "Unknown"
+      ],
+      "donor_type": [
+        "Matched related",
+        "Other related or haploidentical",
+        "Matched unrelated",
+        "Other or match-unknown unrelated",
+        "Cord blood",
+        "Unknown"
+      ],
+      "graft_type": [
+        "Peripheral blood",
+        "Bone marrow",
+        "Cord blood",
+        "Unknown"
+      ],
+      "conditioning_intensity": [
+        "MAC",
+        "RIC/NMA",
+        "Unknown"
+      ],
+      "cmv": [
+        "Recipient CMV negative",
+        "Recipient CMV positive",
+        "Unknown"
+      ]
+    }
+  },
+  {
+    "outcome": "Relapse",
+    "model": "CoxPH",
+    "model_sha256": "cfb7420e37853a3500840a092bc1afb3837f372a79359009f556dd5265d7fbef",
+    "calculator_schema_sha256": "0f5a516bf7406953cb2157b349e7ef5dffac57b4417d566c82250fcf0e56f6eb",
+    "features": [
+      "age",
+      "sex",
+      "kps",
+      "hct_ci",
+      "cytogenetics",
+      "mrd",
+      "donor_type",
+      "graft_type",
+      "conditioning_intensity",
+      "cmv"
+    ],
+    "categorical_levels": {
+      "sex": [
+        "Male",
+        "Female",
+        "Unknown"
+      ],
+      "kps": [
+        "KPS >= 90",
+        "KPS < 90",
+        "Unknown"
+      ],
+      "hct_ci": [
+        "HCT-CI 0-2",
+        "HCT-CI >=3",
+        "Unknown"
+      ],
+      "cytogenetics": [
+        "Favorable",
+        "Intermediate",
+        "Adverse",
+        "Unknown"
+      ],
+      "mrd": [
+        "Negative",
+        "Positive",
+        "Not assessed",
+        "Unknown"
+      ],
+      "donor_type": [
+        "Matched related",
+        "Other related or haploidentical",
+        "Matched unrelated",
+        "Other or match-unknown unrelated",
+        "Cord blood",
+        "Unknown"
+      ],
+      "graft_type": [
+        "Peripheral blood",
+        "Bone marrow",
+        "Cord blood",
+        "Unknown"
+      ],
+      "conditioning_intensity": [
+        "MAC",
+        "RIC/NMA",
+        "Unknown"
+      ],
+      "cmv": [
+        "Recipient CMV negative",
+        "Recipient CMV positive",
+        "Unknown"
+      ]
+    },
+    "model_file": "models/relapse_coxph.joblib"
+  },
+  {
+    "outcome": "Relapse",
+    "model": "Elastic-net Cox",
+    "model_sha256": "32199ddab26fa00705c495b7286c9fb8f63c573ff0a8478cc43cf794f340c7de",
+    "calculator_schema_sha256": "0f5a516bf7406953cb2157b349e7ef5dffac57b4417d566c82250fcf0e56f6eb",
+    "features": [
+      "age",
+      "sex",
+      "kps",
+      "hct_ci",
+      "cytogenetics",
+      "mrd",
+      "donor_type",
+      "graft_type",
+      "conditioning_intensity",
+      "cmv"
+    ],
+    "categorical_levels": {
+      "sex": [
+        "Male",
+        "Female",
+        "Unknown"
+      ],
+      "kps": [
+        "KPS >= 90",
+        "KPS < 90",
+        "Unknown"
+      ],
+      "hct_ci": [
+        "HCT-CI 0-2",
+        "HCT-CI >=3",
+        "Unknown"
+      ],
+      "cytogenetics": [
+        "Favorable",
+        "Intermediate",
+        "Adverse",
+        "Unknown"
+      ],
+      "mrd": [
+        "Negative",
+        "Positive",
+        "Not assessed",
+        "Unknown"
+      ],
+      "donor_type": [
+        "Matched related",
+        "Other related or haploidentical",
+        "Matched unrelated",
+        "Other or match-unknown unrelated",
+        "Cord blood",
+        "Unknown"
+      ],
+      "graft_type": [
+        "Peripheral blood",
+        "Bone marrow",
+        "Cord blood",
+        "Unknown"
+      ],
+      "conditioning_intensity": [
+        "MAC",
+        "RIC/NMA",
+        "Unknown"
+      ],
+      "cmv": [
+        "Recipient CMV negative",
+        "Recipient CMV positive",
+        "Unknown"
+      ]
+    },
+    "model_file": "models/relapse_elastic_net_cox.joblib"
+  },
+  {
+    "outcome": "Relapse",
+    "model": "RSF",
+    "model_sha256": "0fd8b8bd9bfc7007107cdb1e27c8bfc9fa472168220355265b2ab0ead8a19e0a",
+    "calculator_schema_sha256": "0f5a516bf7406953cb2157b349e7ef5dffac57b4417d566c82250fcf0e56f6eb",
+    "features": [
+      "age",
+      "sex",
+      "kps",
+      "hct_ci",
+      "cytogenetics",
+      "mrd",
+      "donor_type",
+      "graft_type",
+      "conditioning_intensity",
+      "cmv"
+    ],
+    "categorical_levels": {
+      "sex": [
+        "Male",
+        "Female",
+        "Unknown"
+      ],
+      "kps": [
+        "KPS >= 90",
+        "KPS < 90",
+        "Unknown"
+      ],
+      "hct_ci": [
+        "HCT-CI 0-2",
+        "HCT-CI >=3",
+        "Unknown"
+      ],
+      "cytogenetics": [
+        "Favorable",
+        "Intermediate",
+        "Adverse",
+        "Unknown"
+      ],
+      "mrd": [
+        "Negative",
+        "Positive",
+        "Not assessed",
+        "Unknown"
+      ],
+      "donor_type": [
+        "Matched related",
+        "Other related or haploidentical",
+        "Matched unrelated",
+        "Other or match-unknown unrelated",
+        "Cord blood",
+        "Unknown"
+      ],
+      "graft_type": [
+        "Peripheral blood",
+        "Bone marrow",
+        "Cord blood",
+        "Unknown"
+      ],
+      "conditioning_intensity": [
+        "MAC",
+        "RIC/NMA",
+        "Unknown"
+      ],
+      "cmv": [
+        "Recipient CMV negative",
+        "Recipient CMV positive",
+        "Unknown"
+      ]
+    }
+  },
+  {
+    "outcome": "TRM_NRM",
+    "model": "CoxPH",
+    "model_sha256": "c328020c6b0bd609ea88ef139ff3d1ae8b4c6033f8dcb1a779ea773b9ab18314",
+    "calculator_schema_sha256": "0f5a516bf7406953cb2157b349e7ef5dffac57b4417d566c82250fcf0e56f6eb",
+    "features": [
+      "age",
+      "sex",
+      "kps",
+      "hct_ci",
+      "cytogenetics",
+      "mrd",
+      "donor_type",
+      "graft_type",
+      "conditioning_intensity",
+      "cmv"
+    ],
+    "categorical_levels": {
+      "sex": [
+        "Male",
+        "Female",
+        "Unknown"
+      ],
+      "kps": [
+        "KPS >= 90",
+        "KPS < 90",
+        "Unknown"
+      ],
+      "hct_ci": [
+        "HCT-CI 0-2",
+        "HCT-CI >=3",
+        "Unknown"
+      ],
+      "cytogenetics": [
+        "Favorable",
+        "Intermediate",
+        "Adverse",
+        "Unknown"
+      ],
+      "mrd": [
+        "Negative",
+        "Positive",
+        "Not assessed",
+        "Unknown"
+      ],
+      "donor_type": [
+        "Matched related",
+        "Other related or haploidentical",
+        "Matched unrelated",
+        "Other or match-unknown unrelated",
+        "Cord blood",
+        "Unknown"
+      ],
+      "graft_type": [
+        "Peripheral blood",
+        "Bone marrow",
+        "Cord blood",
+        "Unknown"
+      ],
+      "conditioning_intensity": [
+        "MAC",
+        "RIC/NMA",
+        "Unknown"
+      ],
+      "cmv": [
+        "Recipient CMV negative",
+        "Recipient CMV positive",
+        "Unknown"
+      ]
+    },
+    "model_file": "models/trm_nrm_coxph.joblib"
+  },
+  {
+    "outcome": "TRM_NRM",
+    "model": "Elastic-net Cox",
+    "model_sha256": "cfda28159cb514cc50c1a5056d6a0ad84548e07746130578f77632f1516689e1",
+    "calculator_schema_sha256": "0f5a516bf7406953cb2157b349e7ef5dffac57b4417d566c82250fcf0e56f6eb",
+    "features": [
+      "age",
+      "sex",
+      "kps",
+      "hct_ci",
+      "cytogenetics",
+      "mrd",
+      "donor_type",
+      "graft_type",
+      "conditioning_intensity",
+      "cmv"
+    ],
+    "categorical_levels": {
+      "sex": [
+        "Male",
+        "Female",
+        "Unknown"
+      ],
+      "kps": [
+        "KPS >= 90",
+        "KPS < 90",
+        "Unknown"
+      ],
+      "hct_ci": [
+        "HCT-CI 0-2",
+        "HCT-CI >=3",
+        "Unknown"
+      ],
+      "cytogenetics": [
+        "Favorable",
+        "Intermediate",
+        "Adverse",
+        "Unknown"
+      ],
+      "mrd": [
+        "Negative",
+        "Positive",
+        "Not assessed",
+        "Unknown"
+      ],
+      "donor_type": [
+        "Matched related",
+        "Other related or haploidentical",
+        "Matched unrelated",
+        "Other or match-unknown unrelated",
+        "Cord blood",
+        "Unknown"
+      ],
+      "graft_type": [
+        "Peripheral blood",
+        "Bone marrow",
+        "Cord blood",
+        "Unknown"
+      ],
+      "conditioning_intensity": [
+        "MAC",
+        "RIC/NMA",
+        "Unknown"
+      ],
+      "cmv": [
+        "Recipient CMV negative",
+        "Recipient CMV positive",
+        "Unknown"
+      ]
+    },
+    "model_file": "models/trm_nrm_elastic_net_cox.joblib"
+  },
+  {
+    "outcome": "TRM_NRM",
+    "model": "RSF",
+    "model_sha256": "b8b6a073910d07b42de260719e2a82c13e045a697e8e11a991484d7acadf2b58",
+    "calculator_schema_sha256": "0f5a516bf7406953cb2157b349e7ef5dffac57b4417d566c82250fcf0e56f6eb",
+    "features": [
+      "age",
+      "sex",
+      "kps",
+      "hct_ci",
+      "cytogenetics",
+      "mrd",
+      "donor_type",
+      "graft_type",
+      "conditioning_intensity",
+      "cmv"
+    ],
+    "categorical_levels": {
+      "sex": [
+        "Male",
+        "Female",
+        "Unknown"
+      ],
+      "kps": [
+        "KPS >= 90",
+        "KPS < 90",
+        "Unknown"
+      ],
+      "hct_ci": [
+        "HCT-CI 0-2",
+        "HCT-CI >=3",
+        "Unknown"
+      ],
+      "cytogenetics": [
+        "Favorable",
+        "Intermediate",
+        "Adverse",
+        "Unknown"
+      ],
+      "mrd": [
+        "Negative",
+        "Positive",
+        "Not assessed",
+        "Unknown"
+      ],
+      "donor_type": [
+        "Matched related",
+        "Other related or haploidentical",
+        "Matched unrelated",
+        "Other or match-unknown unrelated",
+        "Cord blood",
+        "Unknown"
+      ],
+      "graft_type": [
+        "Peripheral blood",
+        "Bone marrow",
+        "Cord blood",
+        "Unknown"
+      ],
+      "conditioning_intensity": [
+        "MAC",
+        "RIC/NMA",
+        "Unknown"
+      ],
+      "cmv": [
+        "Recipient CMV negative",
+        "Recipient CMV positive",
+        "Unknown"
+      ]
+    }
+  }
+]

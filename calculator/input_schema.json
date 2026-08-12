@@ -1,0 +1,294 @@
+{
+  "features": [
+    "age",
+    "sex",
+    "kps",
+    "hct_ci",
+    "cytogenetics",
+    "mrd",
+    "donor_type",
+    "graft_type",
+    "conditioning_intensity",
+    "cmv"
+  ],
+  "numeric": {
+    "age": {
+      "label": "Age at HCT (years)",
+      "min": 18,
+      "max": 85,
+      "default": 55
+    }
+  },
+  "categorical": {
+    "sex": {
+      "label": "Sex",
+      "model_levels": [
+        "Male",
+        "Female",
+        "Unknown"
+      ],
+      "options": [
+        "Male",
+        "Female"
+      ],
+      "development_counts": {
+        "Male": 9066,
+        "Female": 7929,
+        "Unknown": 0
+      },
+      "low_support_warning_below_n": 200,
+      "low_support_warning_below_fraction": 0.01,
+      "low_support_flags": {
+        "Male": false,
+        "Female": false,
+        "Unknown": true
+      },
+      "low_support_rule": "development n < 200 or development prevalence < 1%"
+    },
+    "kps": {
+      "label": "Karnofsky performance status",
+      "model_levels": [
+        "KPS >= 90",
+        "KPS < 90",
+        "Unknown"
+      ],
+      "options": [
+        "KPS >= 90",
+        "KPS < 90",
+        "Unknown"
+      ],
+      "development_counts": {
+        "KPS >= 90": 10337,
+        "KPS < 90": 6274,
+        "Unknown": 384
+      },
+      "low_support_warning_below_n": 200,
+      "low_support_warning_below_fraction": 0.01,
+      "low_support_flags": {
+        "KPS >= 90": false,
+        "KPS < 90": false,
+        "Unknown": false
+      },
+      "low_support_rule": "development n < 200 or development prevalence < 1%"
+    },
+    "hct_ci": {
+      "label": "HCT-CI group",
+      "model_levels": [
+        "HCT-CI 0-2",
+        "HCT-CI >=3",
+        "Unknown"
+      ],
+      "options": [
+        "HCT-CI 0-2",
+        "HCT-CI >=3",
+        "Unknown"
+      ],
+      "development_counts": {
+        "HCT-CI 0-2": 7910,
+        "HCT-CI >=3": 5982,
+        "Unknown": 3103
+      },
+      "low_support_warning_below_n": 200,
+      "low_support_warning_below_fraction": 0.01,
+      "low_support_flags": {
+        "HCT-CI 0-2": false,
+        "HCT-CI >=3": false,
+        "Unknown": false
+      },
+      "low_support_rule": "development n < 200 or development prevalence < 1%"
+    },
+    "cytogenetics": {
+      "label": "Cytogenetic risk",
+      "model_levels": [
+        "Favorable",
+        "Intermediate",
+        "Adverse",
+        "Unknown"
+      ],
+      "options": [
+        "Favorable",
+        "Intermediate",
+        "Adverse",
+        "Unknown"
+      ],
+      "development_counts": {
+        "Favorable": 652,
+        "Intermediate": 8008,
+        "Adverse": 4014,
+        "Unknown": 4321
+      },
+      "low_support_warning_below_n": 200,
+      "low_support_warning_below_fraction": 0.01,
+      "low_support_flags": {
+        "Favorable": false,
+        "Intermediate": false,
+        "Adverse": false,
+        "Unknown": false
+      },
+      "low_support_rule": "development n < 200 or development prevalence < 1%"
+    },
+    "mrd": {
+      "label": "Measurable residual disease",
+      "model_levels": [
+        "Negative",
+        "Positive",
+        "Not assessed",
+        "Unknown"
+      ],
+      "options": [
+        "Negative",
+        "Positive",
+        "Not assessed",
+        "Unknown"
+      ],
+      "development_counts": {
+        "Negative": 7608,
+        "Positive": 2207,
+        "Not assessed": 467,
+        "Unknown": 6713
+      },
+      "low_support_warning_below_n": 200,
+      "low_support_warning_below_fraction": 0.01,
+      "low_support_flags": {
+        "Negative": false,
+        "Positive": false,
+        "Not assessed": false,
+        "Unknown": false
+      },
+      "low_support_rule": "development n < 200 or development prevalence < 1%"
+    },
+    "donor_type": {
+      "label": "Donor type",
+      "model_levels": [
+        "Matched related",
+        "Other related or haploidentical",
+        "Matched unrelated",
+        "Other or match-unknown unrelated",
+        "Cord blood",
+        "Unknown"
+      ],
+      "options": [
+        "Matched related",
+        "Other related or haploidentical",
+        "Matched unrelated",
+        "Other or match-unknown unrelated",
+        "Cord blood"
+      ],
+      "development_counts": {
+        "Matched related": 5178,
+        "Other related or haploidentical": 1638,
+        "Matched unrelated": 6826,
+        "Other or match-unknown unrelated": 1633,
+        "Cord blood": 1720,
+        "Unknown": 0
+      },
+      "low_support_warning_below_n": 200,
+      "low_support_warning_below_fraction": 0.01,
+      "low_support_flags": {
+        "Matched related": false,
+        "Other related or haploidentical": false,
+        "Matched unrelated": false,
+        "Other or match-unknown unrelated": false,
+        "Cord blood": false,
+        "Unknown": true
+      },
+      "low_support_rule": "development n < 200 or development prevalence < 1%"
+    },
+    "graft_type": {
+      "label": "Graft source",
+      "model_levels": [
+        "Peripheral blood",
+        "Bone marrow",
+        "Cord blood",
+        "Unknown"
+      ],
+      "options": [
+        "Peripheral blood",
+        "Bone marrow",
+        "Cord blood",
+        "Unknown"
+      ],
+      "development_counts": {
+        "Peripheral blood": 10867,
+        "Bone marrow": 2323,
+        "Cord blood": 1313,
+        "Unknown": 2492
+      },
+      "low_support_warning_below_n": 200,
+      "low_support_warning_below_fraction": 0.01,
+      "low_support_flags": {
+        "Peripheral blood": false,
+        "Bone marrow": false,
+        "Cord blood": false,
+        "Unknown": false
+      },
+      "low_support_rule": "development n < 200 or development prevalence < 1%"
+    },
+    "conditioning_intensity": {
+      "label": "Conditioning intensity",
+      "model_levels": [
+        "MAC",
+        "RIC/NMA",
+        "Unknown"
+      ],
+      "options": [
+        "MAC",
+        "RIC/NMA",
+        "Unknown"
+      ],
+      "development_counts": {
+        "MAC": 9875,
+        "RIC/NMA": 6997,
+        "Unknown": 123
+      },
+      "low_support_warning_below_n": 200,
+      "low_support_warning_below_fraction": 0.01,
+      "low_support_flags": {
+        "MAC": false,
+        "RIC/NMA": false,
+        "Unknown": true
+      },
+      "low_support_rule": "development n < 200 or development prevalence < 1%"
+    },
+    "cmv": {
+      "label": "Recipient CMV serostatus",
+      "model_levels": [
+        "Recipient CMV negative",
+        "Recipient CMV positive",
+        "Unknown"
+      ],
+      "options": [
+        "Recipient CMV negative",
+        "Recipient CMV positive",
+        "Unknown"
+      ],
+      "development_counts": {
+        "Recipient CMV negative": 3954,
+        "Recipient CMV positive": 7756,
+        "Unknown": 5285
+      },
+      "low_support_warning_below_n": 200,
+      "low_support_warning_below_fraction": 0.01,
+      "low_support_flags": {
+        "Recipient CMV negative": false,
+        "Recipient CMV positive": false,
+        "Unknown": false
+      },
+      "low_support_rule": "development n < 200 or development prevalence < 1%"
+    }
+  },
+  "outcomes": {
+    "OS": {
+      "output": "12-, 24-, and 36-month survival probability, development percentile, and risk stratum"
+    },
+    "DFS": {
+      "output": "12-, 24-, and 36-month disease-free survival probability, development percentile, and risk stratum"
+    },
+    "Relapse": {
+      "output": "cause-specific risk score, development percentile, and risk stratum; not an absolute probability or CIF"
+    },
+    "TRM_NRM": {
+      "output": "cause-specific risk score, development percentile, and risk stratum; not an absolute probability or CIF"
+    }
+  }
+}
