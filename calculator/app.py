@@ -112,12 +112,6 @@ def validated_contract() -> dict:
     return validate_model_schema_contract()
 
 
-@st.cache_resource(show_spinner=False)
-def cached_model(outcome: str, model_name: str):
-    """Load each locked model once per application process."""
-    return load_model_file(outcome, model_name, validate_encoder=True)
-
-
 try:
     CONTRACT = validated_contract()
 except Exception:
@@ -211,7 +205,9 @@ row = pd.DataFrame([values], columns=FEATURES)
 
 
 def render_outcome_card(outcome: str) -> None:
-    model = cached_model(outcome, model_name)
+    # Avoid a process-wide Streamlit resource lock. The compact models load in
+    # well under a second and per-run loading is safer across cloud wake-ups.
+    model = load_model_file(outcome, model_name, validate_encoder=True)
     value = model_score(model, row)
     percentile, group = risk_rank(value, outcome, model_name)
     with st.container(border=True):
