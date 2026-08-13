@@ -136,7 +136,8 @@ with st.form("research_inputs", border=True):
     st.subheader("Patient-level research inputs")
     st.caption(
         "Dropdown choices are limited to categories represented in the development data. "
-        "Missing/unknown categories remain available only where the fitted model was trained on them."
+        "Missing/unknown categories remain available only where the fitted model was trained on them. "
+        "Numeric age is restricted to 18–81 completed years, the integer range observed in development."
     )
     columns = st.columns(3)
     age_spec = SCHEMA["numeric"]["age"]

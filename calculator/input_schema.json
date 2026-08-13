@@ -15,7 +15,7 @@
     "age": {
       "label": "Age at HCT (years)",
       "min": 18,
-      "max": 85,
+      "max": 81,
       "default": 55
     }
   },

@@ -4,7 +4,7 @@
       "outcome": "OS",
       "model": "RSF",
       "source_model_sha256": "4debe246e28e31a8c87023a39abbaf031911f7cf0725c280f973aa87068de0ce",
-      "calculator_schema_sha256": "0f5a516bf7406953cb2157b349e7ef5dffac57b4417d566c82250fcf0e56f6eb",
+      "calculator_schema_sha256": "881d5bcd34df75f4e8973ac1889eb387312e308f89babd346fe2534b7daf2cf0",
       "compact_parts": [
         "calculator/compact_rsf/parts/os_rsf_compact.npz.part00",
         "calculator/compact_rsf/parts/os_rsf_compact.npz.part01",
@@ -19,7 +19,7 @@
       "outcome": "Relapse",
       "model": "RSF",
       "source_model_sha256": "0fd8b8bd9bfc7007107cdb1e27c8bfc9fa472168220355265b2ab0ead8a19e0a",
-      "calculator_schema_sha256": "0f5a516bf7406953cb2157b349e7ef5dffac57b4417d566c82250fcf0e56f6eb",
+      "calculator_schema_sha256": "881d5bcd34df75f4e8973ac1889eb387312e308f89babd346fe2534b7daf2cf0",
       "compact_parts": [
         "calculator/compact_rsf/parts/relapse_rsf_compact.npz.part00",
         "calculator/compact_rsf/parts/relapse_rsf_compact.npz.part01"
@@ -31,7 +31,7 @@
       "outcome": "DFS",
       "model": "RSF",
       "source_model_sha256": "f84c262838bb8c301c1115a3b58a48fde49ad37744d73a46fc71dda0bba2f151",
-      "calculator_schema_sha256": "0f5a516bf7406953cb2157b349e7ef5dffac57b4417d566c82250fcf0e56f6eb",
+      "calculator_schema_sha256": "881d5bcd34df75f4e8973ac1889eb387312e308f89babd346fe2534b7daf2cf0",
       "compact_parts": [
         "calculator/compact_rsf/parts/dfs_rsf_compact.npz.part00",
         "calculator/compact_rsf/parts/dfs_rsf_compact.npz.part01",
@@ -46,7 +46,7 @@
       "outcome": "TRM_NRM",
       "model": "RSF",
       "source_model_sha256": "b8b6a073910d07b42de260719e2a82c13e045a697e8e11a991484d7acadf2b58",
-      "calculator_schema_sha256": "0f5a516bf7406953cb2157b349e7ef5dffac57b4417d566c82250fcf0e56f6eb",
+      "calculator_schema_sha256": "881d5bcd34df75f4e8973ac1889eb387312e308f89babd346fe2534b7daf2cf0",
       "compact_parts": [
         "calculator/compact_rsf/parts/trm_nrm_rsf_compact.npz.part00",
         "calculator/compact_rsf/parts/trm_nrm_rsf_compact.npz.part01",
