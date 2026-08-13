@@ -107,13 +107,11 @@ st.markdown(
 )
 
 
-@st.cache_data(show_spinner=False)
-def validated_contract() -> dict:
-    return validate_model_schema_contract()
-
-
 try:
-    CONTRACT = validated_contract()
+    # Run this lightweight check directly. A Streamlit cache lock can survive a
+    # cloud sleep/wake transition and block the first script delta, leaving only
+    # the empty frontend shell visible until the app is rebooted.
+    CONTRACT = validate_model_schema_contract()
 except Exception:
     st.error(
         "The model explorer is temporarily unavailable. Please contact the study team."
