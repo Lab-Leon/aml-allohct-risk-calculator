@@ -34,6 +34,7 @@ STRATUM_COLOR = {
     "Intermediate": "#707780",
     "High": "#B23A3A",
 }
+OUTPUT_ORDER = ("OS", "DFS", "Relapse", "TRM_NRM")
 
 
 st.set_page_config(
@@ -70,19 +71,118 @@ st.markdown(
         font-size: 0.92rem;
     }
     .aml-card-title { margin-bottom: -0.55rem; }
+    .aml-output-summary {
+        display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+        background: #EAF1F8; border: 1px solid #CAD9E9; border-radius: 12px;
+        padding: 0.72rem 0.9rem; margin: 0.2rem 0 0.85rem;
+    }
+    .aml-output-summary-label {
+        color: var(--aml-muted); font-size: 0.72rem; font-weight: 700;
+        letter-spacing: 0.055em; text-transform: uppercase; margin-bottom: 0.08rem;
+    }
+    .aml-output-summary-value { color: var(--aml-ink); font-size: 0.96rem; font-weight: 750; }
+    .aml-output-summary-copy {
+        color: #40566F; font-size: 0.84rem; line-height: 1.35; max-width: 660px;
+        text-align: right;
+    }
+    .aml-output-grid {
+        display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem;
+        margin: 0 0 0.9rem;
+    }
+    .aml-output-card {
+        display: flex; flex-direction: column; min-width: 0; height: 100%;
+        background: #FFFFFF; border: 1px solid var(--aml-border); border-radius: 14px;
+        padding: 1rem 1.05rem 0.95rem; box-shadow: 0 3px 12px rgba(32, 48, 71, 0.055);
+    }
+    .aml-output-card--probability { border-top: 4px solid #2F6FAE; }
+    .aml-output-card--ranking { border-top: 4px solid #66788B; }
+    .aml-output-head {
+        display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem;
+        margin-bottom: 0.78rem;
+    }
+    .aml-output-head h3 {
+        color: var(--aml-ink); font-size: 1.06rem; line-height: 1.25; margin: 0;
+        letter-spacing: -0.01em;
+    }
+    .aml-output-type {
+        flex: 0 0 auto; border-radius: 999px; padding: 0.2rem 0.58rem;
+        background: #EEF3F8; color: #50667D; font-size: 0.7rem; font-weight: 750;
+        letter-spacing: 0.025em; white-space: nowrap;
+    }
+    .aml-rank-grid {
+        display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 0.68rem;
+        margin-bottom: 0.82rem;
+    }
+    .aml-rank-block {
+        background: #F7F9FC; border: 1px solid #E4EAF1; border-radius: 10px;
+        padding: 0.62rem 0.7rem; min-height: 77px;
+    }
+    .aml-rank-label {
+        color: var(--aml-muted); font-size: 0.7rem; font-weight: 700;
+        line-height: 1.25; margin-bottom: 0.24rem;
+    }
+    .aml-rank-value {
+        color: var(--aml-ink); font-size: 1.55rem; font-weight: 760;
+        letter-spacing: -0.035em; line-height: 1;
+    }
     .aml-stratum {
         display: inline-block; color: white; border-radius: 999px; padding: 0.20rem 0.68rem;
         font-weight: 700; font-size: 0.84rem; margin-top: 0.1rem;
     }
+    .aml-output-section-label {
+        color: #40566F; font-size: 0.76rem; font-weight: 750; margin: 0 0 0.48rem;
+    }
+    .aml-horizon-grid {
+        display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.46rem;
+        margin-bottom: 0.68rem;
+    }
+    .aml-horizon {
+        background: #F7FAFD; border: 1px solid #DDE7F1; border-radius: 9px;
+        padding: 0.52rem 0.35rem; text-align: center;
+    }
+    .aml-horizon span {
+        display: block; color: var(--aml-muted); font-size: 0.68rem; line-height: 1.1;
+        margin-bottom: 0.22rem;
+    }
+    .aml-horizon strong {
+        display: block; color: var(--aml-ink); font-size: 1.17rem; line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
+    .aml-score-panel {
+        display: flex; align-items: flex-end; justify-content: space-between; gap: 0.8rem;
+        background: #F7FAFD; border: 1px solid #DDE7F1; border-radius: 10px;
+        padding: 0.67rem 0.75rem; margin-bottom: 0.68rem;
+    }
+    .aml-score-label { color: var(--aml-muted); font-size: 0.72rem; font-weight: 700; }
+    .aml-score-value {
+        color: var(--aml-ink); font-size: 1.45rem; font-weight: 760;
+        letter-spacing: -0.025em; line-height: 1;
+    }
     .aml-calibration-note {
         background: #FFF4F1; border-left: 4px solid #C55A43; border-radius: 7px;
         color: #6C3428; padding: 0.55rem 0.68rem; font-size: 0.82rem; line-height: 1.35;
-        margin-top: 0.5rem;
+        margin-top: auto; min-height: 58px;
     }
     .aml-ranking-note {
         background: #F0F5FA; border-left: 4px solid #557A9E; border-radius: 7px;
         color: #38536E; padding: 0.55rem 0.68rem; font-size: 0.82rem; line-height: 1.35;
-        margin-top: 0.5rem;
+        margin-top: auto; min-height: 58px;
+    }
+    .aml-independent-note {
+        background: #FFF8E9; border: 1px solid #E7CB8A; border-left: 5px solid #C58D24;
+        color: #5E4615; border-radius: 9px; padding: 0.67rem 0.82rem;
+        font-size: 0.84rem; line-height: 1.4; margin: 0.15rem 0 0.8rem;
+    }
+    @media (max-width: 860px) {
+        .aml-output-grid { grid-template-columns: 1fr; }
+        .aml-output-summary { align-items: flex-start; flex-direction: column; }
+        .aml-output-summary-copy { max-width: none; text-align: left; }
+    }
+    @media (max-width: 520px) {
+        .block-container { padding-left: 0.8rem; padding-right: 0.8rem; }
+        .aml-output-card { padding: 0.88rem; }
+        .aml-rank-grid { grid-template-columns: 1fr 1fr; }
+        .aml-output-head { flex-direction: column; }
     }
     button[kind="primaryFormSubmit"] {
         background: var(--aml-blue) !important; border-color: var(--aml-blue) !important;
@@ -198,61 +298,84 @@ st.caption(
     "Percentiles and strata are relative to the development-score distribution. "
     "They are not treatment thresholds and do not provide individual-prediction confidence intervals."
 )
+st.html(
+    f"""
+    <div class="aml-output-summary">
+      <div>
+        <div class="aml-output-summary-label">Selected research model</div>
+        <div class="aml-output-summary-value">{DISPLAY_MODEL[model_name]}</div>
+      </div>
+      <div class="aml-output-summary-copy">Read the development-score percentile and stratum first. Model-scale outputs are then shown as either uncalibrated survival probabilities or cause-specific ranking scores.</div>
+    </div>
+    """
+)
 
 
 row = pd.DataFrame([values], columns=FEATURES)
 
 
-def render_outcome_card(outcome: str) -> None:
+def render_outcome_card(outcome: str) -> str:
     # Avoid a process-wide Streamlit resource lock. The compact models load in
     # well under a second and per-run loading is safer across cloud wake-ups.
     model = load_model_file(outcome, model_name, validate_encoder=True)
     value = model_score(model, row)
     percentile, group = risk_rank(value, outcome, model_name)
-    with st.container(border=True):
-        st.markdown(f"#### {OUTCOME_LABELS[outcome]}")
-        primary_left, primary_right = st.columns([1.35, 1])
-        with primary_left:
-            st.metric("Development-score percentile", f"{percentile:.1f}")
-        with primary_right:
-            st.markdown("<div style='height:0.28rem'></div>", unsafe_allow_html=True)
-            st.caption("Development-score stratum")
-            st.markdown(
-                f"<span class='aml-stratum' style='background:{STRATUM_COLOR[group]}'>{group}</span>",
-                unsafe_allow_html=True,
-            )
+    common = f"""
+      <div class="aml-output-head">
+        <h3>{OUTCOME_LABELS[outcome]}</h3>
+        <span class="aml-output-type">{{output_type}}</span>
+      </div>
+      <div class="aml-rank-grid">
+        <div class="aml-rank-block">
+          <div class="aml-rank-label">Development-score percentile</div>
+          <div class="aml-rank-value">{percentile:.1f}</div>
+        </div>
+        <div class="aml-rank-block">
+          <div class="aml-rank-label">Development-score stratum</div>
+          <span class="aml-stratum" style="background:{STRATUM_COLOR[group]}">{group}</span>
+        </div>
+      </div>
+    """
 
-        if outcome in {"OS", "DFS"}:
-            st.markdown("**Uncalibrated research estimate — survival probability**")
-            estimates = survival_estimates(model, row)
-            metric_columns = st.columns(3)
-            for column, horizon, estimate in zip(metric_columns, (12, 24, 36), estimates):
-                with column:
-                    st.metric(f"{horizon} months", f"{estimate:.1%}")
-            st.markdown(
-                "<div class='aml-calibration-note'><strong>Calibration warning.</strong> External validation showed systematic miscalibration. These probabilities require setting-specific recalibration before any patient-level use.</div>",
-                unsafe_allow_html=True,
-            )
-        else:
-            score_left, score_right = st.columns([1, 1.4])
-            with score_left:
-                st.metric("Cause-specific risk score", f"{value:.3f}")
-            with score_right:
-                st.markdown(
-                    "<div class='aml-ranking-note'><strong>Relative ranking only.</strong><br>This score is not an absolute event probability or cumulative-incidence estimate.</div>",
-                    unsafe_allow_html=True,
-                )
+    if outcome in {"OS", "DFS"}:
+        estimates = survival_estimates(model, row)
+        horizons = "".join(
+            f'<div class="aml-horizon"><span>{horizon} months</span><strong>{estimate:.1%}</strong></div>'
+            for horizon, estimate in zip((12, 24, 36), estimates)
+        )
+        body = f"""
+          <div class="aml-output-section-label">Uncalibrated research estimate — survival probability</div>
+          <div class="aml-horizon-grid">{horizons}</div>
+          <div class="aml-calibration-note"><strong>Calibration warning.</strong> External validation showed systematic miscalibration. These probabilities require setting-specific recalibration before any patient-level use.</div>
+        """
+        card_class = "probability"
+        output_type = "Probability output"
+    else:
+        body = f"""
+          <div class="aml-output-section-label">Cause-specific model output</div>
+          <div class="aml-score-panel">
+            <div class="aml-score-label">Cause-specific risk score</div>
+            <div class="aml-score-value">{value:.3f}</div>
+          </div>
+          <div class="aml-ranking-note"><strong>Relative ranking only.</strong> This score is not an absolute event probability or cumulative-incidence estimate.</div>
+        """
+        card_class = "ranking"
+        output_type = "Ranking output"
+
+    return (
+        f'<article class="aml-output-card aml-output-card--{card_class}">'
+        + common.replace("{output_type}", output_type)
+        + body
+        + "</article>"
+    )
 
 
-result_columns = st.columns(2)
-for index, outcome in enumerate(OUTCOMES):
-    with result_columns[index % 2]:
-        render_outcome_card(outcome)
+output_cards = "".join(render_outcome_card(outcome) for outcome in OUTPUT_ORDER)
+st.html(f'<div class="aml-output-grid">{output_cards}</div>')
 
 
-st.warning(
-    "OS, DFS, relapse, and TRM/NRM were fitted independently. Do not add or combine "
-    "relapse and TRM/NRM scores to reconstruct DFS."
+st.html(
+    "<div class='aml-independent-note'><strong>Independent endpoints.</strong> OS, DFS, relapse, and TRM/NRM were fitted independently. Do not add or combine relapse and TRM/NRM scores to reconstruct DFS.</div>"
 )
 
 with st.expander("How to interpret these research outputs"):

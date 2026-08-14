@@ -84,6 +84,12 @@ def sha256(path: Path) -> str:
     return digest.hexdigest().lower()
 
 
+def normalized_text_sha256(path: Path) -> str:
+    """Hash UTF-8 text with canonical LF newlines across operating systems."""
+    normalized = path.read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n")
+    return hashlib.sha256(normalized.encode("utf-8")).hexdigest().lower()
+
+
 def repository_path(relative_path: str) -> Path:
     """Resolve registry paths consistently on Windows and Linux."""
     return ROOT.joinpath(*relative_path.replace("\\", "/").split("/"))
@@ -198,7 +204,9 @@ def _validate_thresholds(
 
 
 def validate_model_schema_contract() -> dict[str, object]:
-    actual_schema_hash = sha256(SCHEMA_PATH)
+    # The schema registry is a text contract. Canonicalize newlines so a
+    # Windows checkout does not invalidate the same Git-tracked JSON content.
+    actual_schema_hash = normalized_text_sha256(SCHEMA_PATH)
     expected = expected_categories()
     expected_keys = {(outcome, model) for outcome in OUTCOMES for model in MODELS}
     failures: list[str] = []
