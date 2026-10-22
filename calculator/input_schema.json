@@ -1,4 +1,6 @@
 {
+  "version": "2026.10.14-AML-cohort-endpoint-repair",
+  "canonical_schema_sha256": "5c20f783e1dee02cb52e219d157609752c3895900b63408335a5708e1efef92f",
   "features": [
     "age",
     "sex",
@@ -14,9 +16,15 @@
   "numeric": {
     "age": {
       "label": "Age at HCT (years)",
-      "min": 18,
+      "min": 19,
       "max": 81,
-      "default": 55
+      "default": 55,
+      "integer": true,
+      "observed_range": [
+        18.03696098562628,
+        81.06776180698152
+      ],
+      "entry_rule": "Integer age grid within the observed continuous development-age range"
     }
   },
   "categorical": {
@@ -32,8 +40,8 @@
         "Female"
       ],
       "development_counts": {
-        "Male": 9066,
-        "Female": 7929,
+        "Male": 8954,
+        "Female": 7870,
         "Unknown": 0
       },
       "low_support_warning_below_n": 200,
@@ -58,9 +66,9 @@
         "Unknown"
       ],
       "development_counts": {
-        "KPS >= 90": 10337,
-        "KPS < 90": 6274,
-        "Unknown": 384
+        "KPS >= 90": 10249,
+        "KPS < 90": 6196,
+        "Unknown": 379
       },
       "low_support_warning_below_n": 200,
       "low_support_warning_below_fraction": 0.01,
@@ -84,9 +92,9 @@
         "Unknown"
       ],
       "development_counts": {
-        "HCT-CI 0-2": 7910,
-        "HCT-CI >=3": 5982,
-        "Unknown": 3103
+        "HCT-CI 0-2": 7850,
+        "HCT-CI >=3": 5932,
+        "Unknown": 3042
       },
       "low_support_warning_below_n": 200,
       "low_support_warning_below_fraction": 0.01,
@@ -112,10 +120,10 @@
         "Unknown"
       ],
       "development_counts": {
-        "Favorable": 652,
-        "Intermediate": 8008,
-        "Adverse": 4014,
-        "Unknown": 4321
+        "Favorable": 650,
+        "Intermediate": 7915,
+        "Adverse": 3950,
+        "Unknown": 4309
       },
       "low_support_warning_below_n": 200,
       "low_support_warning_below_fraction": 0.01,
@@ -145,7 +153,7 @@
         "Negative": 7608,
         "Positive": 2207,
         "Not assessed": 467,
-        "Unknown": 6713
+        "Unknown": 6542
       },
       "low_support_warning_below_n": 200,
       "low_support_warning_below_fraction": 0.01,
@@ -175,10 +183,10 @@
         "Cord blood"
       ],
       "development_counts": {
-        "Matched related": 5178,
-        "Other related or haploidentical": 1638,
-        "Matched unrelated": 6826,
-        "Other or match-unknown unrelated": 1633,
+        "Matched related": 5127,
+        "Other related or haploidentical": 1625,
+        "Matched unrelated": 6745,
+        "Other or match-unknown unrelated": 1607,
         "Cord blood": 1720,
         "Unknown": 0
       },
@@ -209,8 +217,8 @@
         "Unknown"
       ],
       "development_counts": {
-        "Peripheral blood": 10867,
-        "Bone marrow": 2323,
+        "Peripheral blood": 10719,
+        "Bone marrow": 2300,
         "Cord blood": 1313,
         "Unknown": 2492
       },
@@ -237,8 +245,8 @@
         "Unknown"
       ],
       "development_counts": {
-        "MAC": 9875,
-        "RIC/NMA": 6997,
+        "MAC": 9781,
+        "RIC/NMA": 6920,
         "Unknown": 123
       },
       "low_support_warning_below_n": 200,
@@ -263,9 +271,9 @@
         "Unknown"
       ],
       "development_counts": {
-        "Recipient CMV negative": 3954,
-        "Recipient CMV positive": 7756,
-        "Unknown": 5285
+        "Recipient CMV negative": 3889,
+        "Recipient CMV positive": 7654,
+        "Unknown": 5281
       },
       "low_support_warning_below_n": 200,
       "low_support_warning_below_fraction": 0.01,

@@ -1,0 +1,941 @@
+{
+  "note": "Synthetic input profiles, not patient records. Survival probabilities are uncalibrated research outputs; relapse and TRM/NRM scores are rankings only.",
+  "examples": [
+    {
+      "synthetic_profile": "Age 19 example",
+      "inputs": {
+        "age": 19,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "CoxPH",
+      "outcome": "OS",
+      "risk_score": -1.0494693354428581,
+      "development_score_percentile": 0.029719448407037566,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": [
+        12,
+        24,
+        36
+      ],
+      "native_uncalibrated_survival_probabilities": [
+        0.8350298615035052,
+        0.7736751616352753,
+        0.738827670017221
+      ]
+    },
+    {
+      "synthetic_profile": "Age 55 example",
+      "inputs": {
+        "age": 55,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "CoxPH",
+      "outcome": "OS",
+      "risk_score": -0.6424664426771285,
+      "development_score_percentile": 5.622919638611507,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": [
+        12,
+        24,
+        36
+      ],
+      "native_uncalibrated_survival_probabilities": [
+        0.7627325187536319,
+        0.6801124492511406,
+        0.6346163635332952
+      ]
+    },
+    {
+      "synthetic_profile": "Age 81 example",
+      "inputs": {
+        "age": 81,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "CoxPH",
+      "outcome": "OS",
+      "risk_score": -0.3485199090129904,
+      "development_score_percentile": 26.12339514978602,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": [
+        12,
+        24,
+        36
+      ],
+      "native_uncalibrated_survival_probabilities": [
+        0.6953083324559628,
+        0.5961719264911705,
+        0.5432840603844651
+      ]
+    },
+    {
+      "synthetic_profile": "Age 19 example",
+      "inputs": {
+        "age": 19,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "CoxPH",
+      "outcome": "Relapse",
+      "risk_score": -0.6422965917336814,
+      "development_score_percentile": 2.2238206557573577,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": null,
+      "native_uncalibrated_survival_probabilities": null
+    },
+    {
+      "synthetic_profile": "Age 55 example",
+      "inputs": {
+        "age": 55,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "CoxPH",
+      "outcome": "Relapse",
+      "risk_score": -0.44410213862826403,
+      "development_score_percentile": 13.265000299706287,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": null,
+      "native_uncalibrated_survival_probabilities": null
+    },
+    {
+      "synthetic_profile": "Age 81 example",
+      "inputs": {
+        "age": 81,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "CoxPH",
+      "outcome": "Relapse",
+      "risk_score": -0.30096170027435165,
+      "development_score_percentile": 26.565965353953125,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": null,
+      "native_uncalibrated_survival_probabilities": null
+    },
+    {
+      "synthetic_profile": "Age 19 example",
+      "inputs": {
+        "age": 19,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "CoxPH",
+      "outcome": "DFS",
+      "risk_score": -0.9256135315987564,
+      "development_score_percentile": 0.047953006054067014,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": [
+        12,
+        24,
+        36
+      ],
+      "native_uncalibrated_survival_probabilities": [
+        0.7542435795367163,
+        0.695680308992052,
+        0.6618255773400674
+      ]
+    },
+    {
+      "synthetic_profile": "Age 55 example",
+      "inputs": {
+        "age": 55,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "CoxPH",
+      "outcome": "DFS",
+      "risk_score": -0.6070232985023232,
+      "development_score_percentile": 5.526583947731224,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": [
+        12,
+        24,
+        36
+      ],
+      "native_uncalibrated_survival_probabilities": [
+        0.678508806370198,
+        0.6071329067869211,
+        0.5668768613043542
+      ]
+    },
+    {
+      "synthetic_profile": "Age 81 example",
+      "inputs": {
+        "age": 81,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "CoxPH",
+      "outcome": "DFS",
+      "risk_score": -0.37693035237712147,
+      "development_score_percentile": 21.87256488641132,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": [
+        12,
+        24,
+        36
+      ],
+      "native_uncalibrated_survival_probabilities": [
+        0.613728131559126,
+        0.5335997294631886,
+        0.48945421731088046
+      ]
+    },
+    {
+      "synthetic_profile": "Age 19 example",
+      "inputs": {
+        "age": 19,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "CoxPH",
+      "outcome": "TRM_NRM",
+      "risk_score": -0.9796682163805079,
+      "development_score_percentile": 0.03596475454055026,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": null,
+      "native_uncalibrated_survival_probabilities": null
+    },
+    {
+      "synthetic_profile": "Age 55 example",
+      "inputs": {
+        "age": 55,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "CoxPH",
+      "outcome": "TRM_NRM",
+      "risk_score": -0.5106160184683028,
+      "development_score_percentile": 5.862254990109692,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": null,
+      "native_uncalibrated_survival_probabilities": null
+    },
+    {
+      "synthetic_profile": "Age 81 example",
+      "inputs": {
+        "age": 81,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "CoxPH",
+      "outcome": "TRM_NRM",
+      "risk_score": -0.17185609775393246,
+      "development_score_percentile": 38.87789965833483,
+      "development_score_stratum": "Intermediate",
+      "survival_horizons_months": null,
+      "native_uncalibrated_survival_probabilities": null
+    },
+    {
+      "synthetic_profile": "Age 19 example",
+      "inputs": {
+        "age": 19,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "Elastic-net Cox",
+      "outcome": "OS",
+      "risk_score": -1.213321667906549,
+      "development_score_percentile": 0.0,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": [
+        12,
+        24,
+        36
+      ],
+      "native_uncalibrated_survival_probabilities": [
+        0.8773552633349732,
+        0.8297389952079995,
+        0.8021686321999673
+      ]
+    },
+    {
+      "synthetic_profile": "Age 55 example",
+      "inputs": {
+        "age": 55,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "Elastic-net Cox",
+      "outcome": "OS",
+      "risk_score": -0.7887242731979123,
+      "development_score_percentile": 1.1709462672372801,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": [
+        12,
+        24,
+        36
+      ],
+      "native_uncalibrated_survival_probabilities": [
+        0.8186848508572843,
+        0.7517329801992592,
+        0.7138790510540947
+      ]
+    },
+    {
+      "synthetic_profile": "Age 81 example",
+      "inputs": {
+        "age": 81,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "Elastic-net Cox",
+      "outcome": "OS",
+      "risk_score": -0.48207059924167456,
+      "development_score_percentile": 10.116500237755588,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": [
+        12,
+        24,
+        36
+      ],
+      "native_uncalibrated_survival_probabilities": [
+        0.7619683632416806,
+        0.678557282324134,
+        0.6325500162530013
+      ]
+    },
+    {
+      "synthetic_profile": "Age 19 example",
+      "inputs": {
+        "age": 19,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "Elastic-net Cox",
+      "outcome": "Relapse",
+      "risk_score": -0.7283245611469799,
+      "development_score_percentile": 0.2277767787568183,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": null,
+      "native_uncalibrated_survival_probabilities": null
+    },
+    {
+      "synthetic_profile": "Age 55 example",
+      "inputs": {
+        "age": 55,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "Elastic-net Cox",
+      "outcome": "Relapse",
+      "risk_score": -0.5987868643841554,
+      "development_score_percentile": 3.8242522328118445,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": null,
+      "native_uncalibrated_survival_probabilities": null
+    },
+    {
+      "synthetic_profile": "Age 81 example",
+      "inputs": {
+        "age": 81,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "Elastic-net Cox",
+      "outcome": "Relapse",
+      "risk_score": -0.50523186116656,
+      "development_score_percentile": 9.021159263921357,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": null,
+      "native_uncalibrated_survival_probabilities": null
+    },
+    {
+      "synthetic_profile": "Age 19 example",
+      "inputs": {
+        "age": 19,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "Elastic-net Cox",
+      "outcome": "DFS",
+      "risk_score": -0.9803092736912797,
+      "development_score_percentile": 0.0,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": [
+        12,
+        24,
+        36
+      ],
+      "native_uncalibrated_survival_probabilities": [
+        0.7950254847807577,
+        0.7441441588890764,
+        0.7143262943292612
+      ]
+    },
+    {
+      "synthetic_profile": "Age 55 example",
+      "inputs": {
+        "age": 55,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "Elastic-net Cox",
+      "outcome": "DFS",
+      "risk_score": -0.6771392359009472,
+      "development_score_percentile": 1.1388838937840917,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": [
+        12,
+        24,
+        36
+      ],
+      "native_uncalibrated_survival_probabilities": [
+        0.7329958692450155,
+        0.670201061167951,
+        0.6340958414013743
+      ]
+    },
+    {
+      "synthetic_profile": "Age 81 example",
+      "inputs": {
+        "age": 81,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "Elastic-net Cox",
+      "outcome": "DFS",
+      "risk_score": -0.4581830974968183,
+      "development_score_percentile": 8.475693820056344,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": [
+        12,
+        24,
+        36
+      ],
+      "native_uncalibrated_survival_probabilities": [
+        0.6793311469803628,
+        0.6076649340765361,
+        0.5671880078523548
+      ]
+    },
+    {
+      "synthetic_profile": "Age 19 example",
+      "inputs": {
+        "age": 19,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "Elastic-net Cox",
+      "outcome": "TRM_NRM",
+      "risk_score": -1.2210631813631518,
+      "development_score_percentile": 0.02997062878379188,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": null,
+      "native_uncalibrated_survival_probabilities": null
+    },
+    {
+      "synthetic_profile": "Age 55 example",
+      "inputs": {
+        "age": 55,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "Elastic-net Cox",
+      "outcome": "TRM_NRM",
+      "risk_score": -0.6390808690655713,
+      "development_score_percentile": 4.315770544866031,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": null,
+      "native_uncalibrated_survival_probabilities": null
+    },
+    {
+      "synthetic_profile": "Age 81 example",
+      "inputs": {
+        "age": 81,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "Elastic-net Cox",
+      "outcome": "TRM_NRM",
+      "risk_score": -0.21876031018398528,
+      "development_score_percentile": 29.24533956722412,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": null,
+      "native_uncalibrated_survival_probabilities": null
+    },
+    {
+      "synthetic_profile": "Age 19 example",
+      "inputs": {
+        "age": 19,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "RSF",
+      "outcome": "OS",
+      "risk_score": 484.4926114325842,
+      "development_score_percentile": 14.134569662387067,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": [
+        12,
+        24,
+        36
+      ],
+      "native_uncalibrated_survival_probabilities": [
+        0.815049889546813,
+        0.770086734698922,
+        0.6921851956050388
+      ]
+    },
+    {
+      "synthetic_profile": "Age 55 example",
+      "inputs": {
+        "age": 55,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "RSF",
+      "outcome": "OS",
+      "risk_score": 280.40322414260686,
+      "development_score_percentile": 2.2646219686162627,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": [
+        12,
+        24,
+        36
+      ],
+      "native_uncalibrated_survival_probabilities": [
+        0.8903629689153767,
+        0.8494916278171165,
+        0.8469150498605181
+      ]
+    },
+    {
+      "synthetic_profile": "Age 81 example",
+      "inputs": {
+        "age": 81,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "RSF",
+      "outcome": "OS",
+      "risk_score": 757.282536803141,
+      "development_score_percentile": 35.72277698525915,
+      "development_score_stratum": "Intermediate",
+      "survival_horizons_months": [
+        12,
+        24,
+        36
+      ],
+      "native_uncalibrated_survival_probabilities": [
+        0.6916656715857842,
+        0.6487186081546851,
+        0.6193141839710213
+      ]
+    },
+    {
+      "synthetic_profile": "Age 19 example",
+      "inputs": {
+        "age": 19,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "RSF",
+      "outcome": "Relapse",
+      "risk_score": 261.66874809333626,
+      "development_score_percentile": 16.94539351435593,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": null,
+      "native_uncalibrated_survival_probabilities": null
+    },
+    {
+      "synthetic_profile": "Age 55 example",
+      "inputs": {
+        "age": 55,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "RSF",
+      "outcome": "Relapse",
+      "risk_score": 259.2426088768117,
+      "development_score_percentile": 16.268057303842234,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": null,
+      "native_uncalibrated_survival_probabilities": null
+    },
+    {
+      "synthetic_profile": "Age 81 example",
+      "inputs": {
+        "age": 81,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "RSF",
+      "outcome": "Relapse",
+      "risk_score": 322.75382494958313,
+      "development_score_percentile": 34.49619373014446,
+      "development_score_stratum": "Intermediate",
+      "survival_horizons_months": null,
+      "native_uncalibrated_survival_probabilities": null
+    },
+    {
+      "synthetic_profile": "Age 19 example",
+      "inputs": {
+        "age": 19,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "RSF",
+      "outcome": "DFS",
+      "risk_score": 583.0624364436584,
+      "development_score_percentile": 15.446862075166337,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": [
+        12,
+        24,
+        36
+      ],
+      "native_uncalibrated_survival_probabilities": [
+        0.7377326449869258,
+        0.6067428318286794,
+        0.5994883887430387
+      ]
+    },
+    {
+      "synthetic_profile": "Age 55 example",
+      "inputs": {
+        "age": 55,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "RSF",
+      "outcome": "DFS",
+      "risk_score": 552.0512289253589,
+      "development_score_percentile": 13.360906311814421,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": [
+        12,
+        24,
+        36
+      ],
+      "native_uncalibrated_survival_probabilities": [
+        0.7360885886270442,
+        0.6630551305569965,
+        0.6485311300776055
+      ]
+    },
+    {
+      "synthetic_profile": "Age 81 example",
+      "inputs": {
+        "age": 81,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "RSF",
+      "outcome": "DFS",
+      "risk_score": 861.9870265309966,
+      "development_score_percentile": 37.4992507342804,
+      "development_score_stratum": "Intermediate",
+      "survival_horizons_months": [
+        12,
+        24,
+        36
+      ],
+      "native_uncalibrated_survival_probabilities": [
+        0.6337712528420633,
+        0.5898488489230823,
+        0.4967612887901332
+      ]
+    },
+    {
+      "synthetic_profile": "Age 19 example",
+      "inputs": {
+        "age": 19,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "RSF",
+      "outcome": "TRM_NRM",
+      "risk_score": 148.9263020411139,
+      "development_score_percentile": 30.31828807768387,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": null,
+      "native_uncalibrated_survival_probabilities": null
+    },
+    {
+      "synthetic_profile": "Age 55 example",
+      "inputs": {
+        "age": 55,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "RSF",
+      "outcome": "TRM_NRM",
+      "risk_score": 77.49933124575533,
+      "development_score_percentile": 10.387819936462266,
+      "development_score_stratum": "Low",
+      "survival_horizons_months": null,
+      "native_uncalibrated_survival_probabilities": null
+    },
+    {
+      "synthetic_profile": "Age 81 example",
+      "inputs": {
+        "age": 81,
+        "sex": "Male",
+        "kps": "KPS >= 90",
+        "hct_ci": "HCT-CI 0-2",
+        "cytogenetics": "Favorable",
+        "mrd": "Negative",
+        "donor_type": "Matched related",
+        "graft_type": "Peripheral blood",
+        "conditioning_intensity": "MAC",
+        "cmv": "Recipient CMV negative"
+      },
+      "model": "RSF",
+      "outcome": "TRM_NRM",
+      "risk_score": 350.4347237999156,
+      "development_score_percentile": 70.7366780555056,
+      "development_score_stratum": "High",
+      "survival_horizons_months": null,
+      "native_uncalibrated_survival_probabilities": null
+    }
+  ]
+}

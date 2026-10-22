@@ -1,9 +1,17 @@
 [
   {
+    "version": "2026.10.14-AML-cohort-endpoint-repair",
     "outcome": "DFS",
     "model": "CoxPH",
-    "model_sha256": "f5f925049f58d9dd8cd92dbc4882f4f38fdb7da10d61eba133560dcd8631a51c",
-    "calculator_schema_sha256": "881d5bcd34df75f4e8973ac1889eb387312e308f89babd346fe2534b7daf2cf0",
+    "display_model": "CoxPH",
+    "primary_for_outcome": false,
+    "hyperparameters": {
+      "alpha": 1000.0
+    },
+    "selection_rule": "one-standard-error; prefer stronger L2 shrinkage",
+    "mean_lodo_auc": 0.6207028537577814,
+    "sd_lodo_auc": 0.0131385264171916,
+    "lodo_folds": 5,
     "features": [
       "age",
       "sex",
@@ -15,6 +23,42 @@
       "graft_type",
       "conditioning_intensity",
       "cmv"
+    ],
+    "encoded_feature_names": [
+      "num__age",
+      "cat__sex_Male",
+      "cat__sex_Female",
+      "cat__sex_Unknown",
+      "cat__kps_KPS >= 90",
+      "cat__kps_KPS < 90",
+      "cat__kps_Unknown",
+      "cat__hct_ci_HCT-CI 0-2",
+      "cat__hct_ci_HCT-CI >=3",
+      "cat__hct_ci_Unknown",
+      "cat__cytogenetics_Favorable",
+      "cat__cytogenetics_Intermediate",
+      "cat__cytogenetics_Adverse",
+      "cat__cytogenetics_Unknown",
+      "cat__mrd_Negative",
+      "cat__mrd_Positive",
+      "cat__mrd_Not assessed",
+      "cat__mrd_Unknown",
+      "cat__donor_type_Matched related",
+      "cat__donor_type_Other related or haploidentical",
+      "cat__donor_type_Matched unrelated",
+      "cat__donor_type_Other or match-unknown unrelated",
+      "cat__donor_type_Cord blood",
+      "cat__donor_type_Unknown",
+      "cat__graft_type_Peripheral blood",
+      "cat__graft_type_Bone marrow",
+      "cat__graft_type_Cord blood",
+      "cat__graft_type_Unknown",
+      "cat__conditioning_intensity_MAC",
+      "cat__conditioning_intensity_RIC/NMA",
+      "cat__conditioning_intensity_Unknown",
+      "cat__cmv_Recipient CMV negative",
+      "cat__cmv_Recipient CMV positive",
+      "cat__cmv_Unknown"
     ],
     "categorical_levels": {
       "sex": [
@@ -69,13 +113,35 @@
         "Unknown"
       ]
     },
-    "model_file": "models/dfs_coxph.joblib"
+    "risk_cutoffs": {
+      "low_intermediate": -0.2750929812464011,
+      "intermediate_high": -0.01926084231476725
+    },
+    "model_file": "models/dfs_coxph.joblib",
+    "model_sha256": "47c1bf01e038e72941ef918f7f6fb90e6b3b969f5970a1c58464ef14cab54e37",
+    "canonical_schema_sha256": "5c20f783e1dee02cb52e219d157609752c3895900b63408335a5708e1efef92f",
+    "calculator_schema_sha256": "e7636c752664914868f3b44b20b29226a25462e96805e1f4e0344d5194bb4f0f",
+    "random_seed": 20260608,
+    "training_date": "2026-10-12",
+    "fit_created_utc": "2026-10-12T11:15:36.716541+00:00"
   },
   {
+    "version": "2026.10.14-AML-cohort-endpoint-repair",
     "outcome": "DFS",
     "model": "Elastic-net Cox",
-    "model_sha256": "8c87d37e9545bef6e8d231bc8714617a3972bd5ae9753e73dfca1b42b885e573",
-    "calculator_schema_sha256": "881d5bcd34df75f4e8973ac1889eb387312e308f89babd346fe2534b7daf2cf0",
+    "display_model": "LASSO-Cox",
+    "primary_for_outcome": false,
+    "hyperparameters": {
+      "l1_ratio": 1.0,
+      "path_index": 37,
+      "path_fraction": 0.7551020408163265,
+      "search_round": 1,
+      "selected_alpha_full_development": 0.002715811224373468
+    },
+    "selection_rule": "maximum mean development-dataset LODO AUC",
+    "mean_lodo_auc": 0.6227808782248088,
+    "sd_lodo_auc": 0.0158772444613558,
+    "lodo_folds": 5,
     "features": [
       "age",
       "sex",
@@ -87,6 +153,42 @@
       "graft_type",
       "conditioning_intensity",
       "cmv"
+    ],
+    "encoded_feature_names": [
+      "num__age",
+      "cat__sex_Male",
+      "cat__sex_Female",
+      "cat__sex_Unknown",
+      "cat__kps_KPS >= 90",
+      "cat__kps_KPS < 90",
+      "cat__kps_Unknown",
+      "cat__hct_ci_HCT-CI 0-2",
+      "cat__hct_ci_HCT-CI >=3",
+      "cat__hct_ci_Unknown",
+      "cat__cytogenetics_Favorable",
+      "cat__cytogenetics_Intermediate",
+      "cat__cytogenetics_Adverse",
+      "cat__cytogenetics_Unknown",
+      "cat__mrd_Negative",
+      "cat__mrd_Positive",
+      "cat__mrd_Not assessed",
+      "cat__mrd_Unknown",
+      "cat__donor_type_Matched related",
+      "cat__donor_type_Other related or haploidentical",
+      "cat__donor_type_Matched unrelated",
+      "cat__donor_type_Other or match-unknown unrelated",
+      "cat__donor_type_Cord blood",
+      "cat__donor_type_Unknown",
+      "cat__graft_type_Peripheral blood",
+      "cat__graft_type_Bone marrow",
+      "cat__graft_type_Cord blood",
+      "cat__graft_type_Unknown",
+      "cat__conditioning_intensity_MAC",
+      "cat__conditioning_intensity_RIC/NMA",
+      "cat__conditioning_intensity_Unknown",
+      "cat__cmv_Recipient CMV negative",
+      "cat__cmv_Recipient CMV positive",
+      "cat__cmv_Unknown"
     ],
     "categorical_levels": {
       "sex": [
@@ -141,13 +243,34 @@
         "Unknown"
       ]
     },
-    "model_file": "models/dfs_elastic_net_cox.joblib"
+    "risk_cutoffs": {
+      "low_intermediate": -0.15381252477536625,
+      "intermediate_high": 0.1396877518594559
+    },
+    "model_file": "models/dfs_elastic_net_cox.joblib",
+    "model_sha256": "800f9ffd3e15bf3254a3f5a2365339b63fad60ab56f4b1eaf3ed23cf8fe630c0",
+    "canonical_schema_sha256": "5c20f783e1dee02cb52e219d157609752c3895900b63408335a5708e1efef92f",
+    "calculator_schema_sha256": "e7636c752664914868f3b44b20b29226a25462e96805e1f4e0344d5194bb4f0f",
+    "random_seed": 20260608,
+    "training_date": "2026-10-12",
+    "fit_created_utc": "2026-10-12T11:15:36.987942+00:00"
   },
   {
+    "version": "2026.10.14-AML-cohort-endpoint-repair",
     "outcome": "DFS",
     "model": "RSF",
-    "model_sha256": "f84c262838bb8c301c1115a3b58a48fde49ad37744d73a46fc71dda0bba2f151",
-    "calculator_schema_sha256": "881d5bcd34df75f4e8973ac1889eb387312e308f89babd346fe2534b7daf2cf0",
+    "display_model": "RSF",
+    "primary_for_outcome": true,
+    "hyperparameters": {
+      "n_estimators": 500,
+      "min_samples_leaf": 5,
+      "min_samples_split": 10,
+      "max_features": 0.5
+    },
+    "selection_rule": "one-time 5/10 vs R4.1 10/20 rule; prefer 500 trees when paired 1000-tree gain <=0.001",
+    "mean_lodo_auc": 0.6500870463511459,
+    "sd_lodo_auc": 0.0163481668685784,
+    "lodo_folds": 5,
     "features": [
       "age",
       "sex",
@@ -159,6 +282,42 @@
       "graft_type",
       "conditioning_intensity",
       "cmv"
+    ],
+    "encoded_feature_names": [
+      "num__age",
+      "cat__sex_Male",
+      "cat__sex_Female",
+      "cat__sex_Unknown",
+      "cat__kps_KPS >= 90",
+      "cat__kps_KPS < 90",
+      "cat__kps_Unknown",
+      "cat__hct_ci_HCT-CI 0-2",
+      "cat__hct_ci_HCT-CI >=3",
+      "cat__hct_ci_Unknown",
+      "cat__cytogenetics_Favorable",
+      "cat__cytogenetics_Intermediate",
+      "cat__cytogenetics_Adverse",
+      "cat__cytogenetics_Unknown",
+      "cat__mrd_Negative",
+      "cat__mrd_Positive",
+      "cat__mrd_Not assessed",
+      "cat__mrd_Unknown",
+      "cat__donor_type_Matched related",
+      "cat__donor_type_Other related or haploidentical",
+      "cat__donor_type_Matched unrelated",
+      "cat__donor_type_Other or match-unknown unrelated",
+      "cat__donor_type_Cord blood",
+      "cat__donor_type_Unknown",
+      "cat__graft_type_Peripheral blood",
+      "cat__graft_type_Bone marrow",
+      "cat__graft_type_Cord blood",
+      "cat__graft_type_Unknown",
+      "cat__conditioning_intensity_MAC",
+      "cat__conditioning_intensity_RIC/NMA",
+      "cat__conditioning_intensity_Unknown",
+      "cat__cmv_Recipient CMV negative",
+      "cat__cmv_Recipient CMV positive",
+      "cat__cmv_Unknown"
     ],
     "categorical_levels": {
       "sex": [
@@ -212,13 +371,32 @@
         "Recipient CMV positive",
         "Unknown"
       ]
-    }
+    },
+    "risk_cutoffs": {
+      "low_intermediate": 810.1730106305417,
+      "intermediate_high": 1269.6518260099685
+    },
+    "model_file": "models/dfs_rsf.joblib",
+    "model_sha256": "0061a598909e5ed16a759f90f838bae8814c8fef0500dc873054623851eb5c6e",
+    "canonical_schema_sha256": "5c20f783e1dee02cb52e219d157609752c3895900b63408335a5708e1efef92f",
+    "calculator_schema_sha256": "e7636c752664914868f3b44b20b29226a25462e96805e1f4e0344d5194bb4f0f",
+    "random_seed": 20260608,
+    "training_date": "2026-10-12",
+    "fit_created_utc": "2026-10-12T11:17:22.394915+00:00"
   },
   {
+    "version": "2026.10.14-AML-cohort-endpoint-repair",
     "outcome": "OS",
     "model": "CoxPH",
-    "model_sha256": "86005fa4ef56eb94feb09dd19a5c81dacc30472e6499473258eb0126fff92da4",
-    "calculator_schema_sha256": "881d5bcd34df75f4e8973ac1889eb387312e308f89babd346fe2534b7daf2cf0",
+    "display_model": "CoxPH",
+    "primary_for_outcome": false,
+    "hyperparameters": {
+      "alpha": 1000.0
+    },
+    "selection_rule": "one-standard-error; prefer stronger L2 shrinkage",
+    "mean_lodo_auc": 0.622875359941082,
+    "sd_lodo_auc": 0.0100739949524375,
+    "lodo_folds": 5,
     "features": [
       "age",
       "sex",
@@ -230,6 +408,42 @@
       "graft_type",
       "conditioning_intensity",
       "cmv"
+    ],
+    "encoded_feature_names": [
+      "num__age",
+      "cat__sex_Male",
+      "cat__sex_Female",
+      "cat__sex_Unknown",
+      "cat__kps_KPS >= 90",
+      "cat__kps_KPS < 90",
+      "cat__kps_Unknown",
+      "cat__hct_ci_HCT-CI 0-2",
+      "cat__hct_ci_HCT-CI >=3",
+      "cat__hct_ci_Unknown",
+      "cat__cytogenetics_Favorable",
+      "cat__cytogenetics_Intermediate",
+      "cat__cytogenetics_Adverse",
+      "cat__cytogenetics_Unknown",
+      "cat__mrd_Negative",
+      "cat__mrd_Positive",
+      "cat__mrd_Not assessed",
+      "cat__mrd_Unknown",
+      "cat__donor_type_Matched related",
+      "cat__donor_type_Other related or haploidentical",
+      "cat__donor_type_Matched unrelated",
+      "cat__donor_type_Other or match-unknown unrelated",
+      "cat__donor_type_Cord blood",
+      "cat__donor_type_Unknown",
+      "cat__graft_type_Peripheral blood",
+      "cat__graft_type_Bone marrow",
+      "cat__graft_type_Cord blood",
+      "cat__graft_type_Unknown",
+      "cat__conditioning_intensity_MAC",
+      "cat__conditioning_intensity_RIC/NMA",
+      "cat__conditioning_intensity_Unknown",
+      "cat__cmv_Recipient CMV negative",
+      "cat__cmv_Recipient CMV positive",
+      "cat__cmv_Unknown"
     ],
     "categorical_levels": {
       "sex": [
@@ -284,13 +498,35 @@
         "Unknown"
       ]
     },
-    "model_file": "models/os_coxph.joblib"
+    "risk_cutoffs": {
+      "low_intermediate": -0.28047601968300184,
+      "intermediate_high": -0.0074154702175596955
+    },
+    "model_file": "models/os_coxph.joblib",
+    "model_sha256": "5ddd29174401487692c30f6a147aedb56f372ecba96ca19d2999ff9753b15840",
+    "canonical_schema_sha256": "5c20f783e1dee02cb52e219d157609752c3895900b63408335a5708e1efef92f",
+    "calculator_schema_sha256": "e7636c752664914868f3b44b20b29226a25462e96805e1f4e0344d5194bb4f0f",
+    "random_seed": 20260608,
+    "training_date": "2026-10-12",
+    "fit_created_utc": "2026-10-12T11:17:25.305501+00:00"
   },
   {
+    "version": "2026.10.14-AML-cohort-endpoint-repair",
     "outcome": "OS",
     "model": "Elastic-net Cox",
-    "model_sha256": "0a36281157f595f0b4cc3926e9f403b0b69305f423790f5532217d5bd104d26e",
-    "calculator_schema_sha256": "881d5bcd34df75f4e8973ac1889eb387312e308f89babd346fe2534b7daf2cf0",
+    "display_model": "LASSO-Cox",
+    "primary_for_outcome": false,
+    "hyperparameters": {
+      "l1_ratio": 1.0,
+      "path_index": 42,
+      "path_fraction": 0.8571428571428571,
+      "search_round": 1,
+      "selected_alpha_full_development": 0.0017209989620478585
+    },
+    "selection_rule": "maximum mean development-dataset LODO AUC",
+    "mean_lodo_auc": 0.6256491992608435,
+    "sd_lodo_auc": 0.0116275631560066,
+    "lodo_folds": 5,
     "features": [
       "age",
       "sex",
@@ -302,6 +538,42 @@
       "graft_type",
       "conditioning_intensity",
       "cmv"
+    ],
+    "encoded_feature_names": [
+      "num__age",
+      "cat__sex_Male",
+      "cat__sex_Female",
+      "cat__sex_Unknown",
+      "cat__kps_KPS >= 90",
+      "cat__kps_KPS < 90",
+      "cat__kps_Unknown",
+      "cat__hct_ci_HCT-CI 0-2",
+      "cat__hct_ci_HCT-CI >=3",
+      "cat__hct_ci_Unknown",
+      "cat__cytogenetics_Favorable",
+      "cat__cytogenetics_Intermediate",
+      "cat__cytogenetics_Adverse",
+      "cat__cytogenetics_Unknown",
+      "cat__mrd_Negative",
+      "cat__mrd_Positive",
+      "cat__mrd_Not assessed",
+      "cat__mrd_Unknown",
+      "cat__donor_type_Matched related",
+      "cat__donor_type_Other related or haploidentical",
+      "cat__donor_type_Matched unrelated",
+      "cat__donor_type_Other or match-unknown unrelated",
+      "cat__donor_type_Cord blood",
+      "cat__donor_type_Unknown",
+      "cat__graft_type_Peripheral blood",
+      "cat__graft_type_Bone marrow",
+      "cat__graft_type_Cord blood",
+      "cat__graft_type_Unknown",
+      "cat__conditioning_intensity_MAC",
+      "cat__conditioning_intensity_RIC/NMA",
+      "cat__conditioning_intensity_Unknown",
+      "cat__cmv_Recipient CMV negative",
+      "cat__cmv_Recipient CMV positive",
+      "cat__cmv_Unknown"
     ],
     "categorical_levels": {
       "sex": [
@@ -356,13 +628,34 @@
         "Unknown"
       ]
     },
-    "model_file": "models/os_elastic_net_cox.joblib"
+    "risk_cutoffs": {
+      "low_intermediate": -0.1682585119164597,
+      "intermediate_high": 0.16317813340258885
+    },
+    "model_file": "models/os_elastic_net_cox.joblib",
+    "model_sha256": "7a474cb021dcc7a3e5b0f8d7d4caf0be4ebf7d877a79d633f1ae277bcf0810f1",
+    "canonical_schema_sha256": "5c20f783e1dee02cb52e219d157609752c3895900b63408335a5708e1efef92f",
+    "calculator_schema_sha256": "e7636c752664914868f3b44b20b29226a25462e96805e1f4e0344d5194bb4f0f",
+    "random_seed": 20260608,
+    "training_date": "2026-10-12",
+    "fit_created_utc": "2026-10-12T11:17:25.653646+00:00"
   },
   {
+    "version": "2026.10.14-AML-cohort-endpoint-repair",
     "outcome": "OS",
     "model": "RSF",
-    "model_sha256": "4debe246e28e31a8c87023a39abbaf031911f7cf0725c280f973aa87068de0ce",
-    "calculator_schema_sha256": "881d5bcd34df75f4e8973ac1889eb387312e308f89babd346fe2534b7daf2cf0",
+    "display_model": "RSF",
+    "primary_for_outcome": true,
+    "hyperparameters": {
+      "n_estimators": 500,
+      "min_samples_leaf": 5,
+      "min_samples_split": 10,
+      "max_features": 0.5
+    },
+    "selection_rule": "one-time 5/10 vs R4.1 10/20 rule; prefer 500 trees when paired 1000-tree gain <=0.001",
+    "mean_lodo_auc": 0.6528314298873095,
+    "sd_lodo_auc": 0.015170243184391,
+    "lodo_folds": 5,
     "features": [
       "age",
       "sex",
@@ -374,6 +667,42 @@
       "graft_type",
       "conditioning_intensity",
       "cmv"
+    ],
+    "encoded_feature_names": [
+      "num__age",
+      "cat__sex_Male",
+      "cat__sex_Female",
+      "cat__sex_Unknown",
+      "cat__kps_KPS >= 90",
+      "cat__kps_KPS < 90",
+      "cat__kps_Unknown",
+      "cat__hct_ci_HCT-CI 0-2",
+      "cat__hct_ci_HCT-CI >=3",
+      "cat__hct_ci_Unknown",
+      "cat__cytogenetics_Favorable",
+      "cat__cytogenetics_Intermediate",
+      "cat__cytogenetics_Adverse",
+      "cat__cytogenetics_Unknown",
+      "cat__mrd_Negative",
+      "cat__mrd_Positive",
+      "cat__mrd_Not assessed",
+      "cat__mrd_Unknown",
+      "cat__donor_type_Matched related",
+      "cat__donor_type_Other related or haploidentical",
+      "cat__donor_type_Matched unrelated",
+      "cat__donor_type_Other or match-unknown unrelated",
+      "cat__donor_type_Cord blood",
+      "cat__donor_type_Unknown",
+      "cat__graft_type_Peripheral blood",
+      "cat__graft_type_Bone marrow",
+      "cat__graft_type_Cord blood",
+      "cat__graft_type_Unknown",
+      "cat__conditioning_intensity_MAC",
+      "cat__conditioning_intensity_RIC/NMA",
+      "cat__conditioning_intensity_Unknown",
+      "cat__cmv_Recipient CMV negative",
+      "cat__cmv_Recipient CMV positive",
+      "cat__cmv_Unknown"
     ],
     "categorical_levels": {
       "sex": [
@@ -427,13 +756,32 @@
         "Recipient CMV positive",
         "Unknown"
       ]
-    }
+    },
+    "risk_cutoffs": {
+      "low_intermediate": 722.3271190788887,
+      "intermediate_high": 1194.693731296586
+    },
+    "model_file": "models/os_rsf.joblib",
+    "model_sha256": "7c3f76116ae00acb00a354821d1b867a7801654b1165363b240d10ef189c9ba4",
+    "canonical_schema_sha256": "5c20f783e1dee02cb52e219d157609752c3895900b63408335a5708e1efef92f",
+    "calculator_schema_sha256": "e7636c752664914868f3b44b20b29226a25462e96805e1f4e0344d5194bb4f0f",
+    "random_seed": 20260608,
+    "training_date": "2026-10-12",
+    "fit_created_utc": "2026-10-12T11:19:20.412078+00:00"
   },
   {
+    "version": "2026.10.14-AML-cohort-endpoint-repair",
     "outcome": "Relapse",
     "model": "CoxPH",
-    "model_sha256": "cfb7420e37853a3500840a092bc1afb3837f372a79359009f556dd5265d7fbef",
-    "calculator_schema_sha256": "881d5bcd34df75f4e8973ac1889eb387312e308f89babd346fe2534b7daf2cf0",
+    "display_model": "CoxPH",
+    "primary_for_outcome": false,
+    "hyperparameters": {
+      "alpha": 1000.0
+    },
+    "selection_rule": "one-standard-error; prefer stronger L2 shrinkage",
+    "mean_lodo_auc": 0.6249304509121427,
+    "sd_lodo_auc": 0.0130061808346572,
+    "lodo_folds": 5,
     "features": [
       "age",
       "sex",
@@ -445,6 +793,42 @@
       "graft_type",
       "conditioning_intensity",
       "cmv"
+    ],
+    "encoded_feature_names": [
+      "num__age",
+      "cat__sex_Male",
+      "cat__sex_Female",
+      "cat__sex_Unknown",
+      "cat__kps_KPS >= 90",
+      "cat__kps_KPS < 90",
+      "cat__kps_Unknown",
+      "cat__hct_ci_HCT-CI 0-2",
+      "cat__hct_ci_HCT-CI >=3",
+      "cat__hct_ci_Unknown",
+      "cat__cytogenetics_Favorable",
+      "cat__cytogenetics_Intermediate",
+      "cat__cytogenetics_Adverse",
+      "cat__cytogenetics_Unknown",
+      "cat__mrd_Negative",
+      "cat__mrd_Positive",
+      "cat__mrd_Not assessed",
+      "cat__mrd_Unknown",
+      "cat__donor_type_Matched related",
+      "cat__donor_type_Other related or haploidentical",
+      "cat__donor_type_Matched unrelated",
+      "cat__donor_type_Other or match-unknown unrelated",
+      "cat__donor_type_Cord blood",
+      "cat__donor_type_Unknown",
+      "cat__graft_type_Peripheral blood",
+      "cat__graft_type_Bone marrow",
+      "cat__graft_type_Cord blood",
+      "cat__graft_type_Unknown",
+      "cat__conditioning_intensity_MAC",
+      "cat__conditioning_intensity_RIC/NMA",
+      "cat__conditioning_intensity_Unknown",
+      "cat__cmv_Recipient CMV negative",
+      "cat__cmv_Recipient CMV positive",
+      "cat__cmv_Unknown"
     ],
     "categorical_levels": {
       "sex": [
@@ -499,13 +883,35 @@
         "Unknown"
       ]
     },
-    "model_file": "models/relapse_coxph.joblib"
+    "risk_cutoffs": {
+      "low_intermediate": -0.24820150201618688,
+      "intermediate_high": -0.00974175755361777
+    },
+    "model_file": "models/relapse_coxph.joblib",
+    "model_sha256": "f92c89d6d592db4693dc33cd470d13fbcfc3cab97c7460a9eefee2b5de97bbc4",
+    "canonical_schema_sha256": "5c20f783e1dee02cb52e219d157609752c3895900b63408335a5708e1efef92f",
+    "calculator_schema_sha256": "e7636c752664914868f3b44b20b29226a25462e96805e1f4e0344d5194bb4f0f",
+    "random_seed": 20260608,
+    "training_date": "2026-10-12",
+    "fit_created_utc": "2026-10-12T11:19:23.311090+00:00"
   },
   {
+    "version": "2026.10.14-AML-cohort-endpoint-repair",
     "outcome": "Relapse",
     "model": "Elastic-net Cox",
-    "model_sha256": "32199ddab26fa00705c495b7286c9fb8f63c573ff0a8478cc43cf794f340c7de",
-    "calculator_schema_sha256": "881d5bcd34df75f4e8973ac1889eb387312e308f89babd346fe2534b7daf2cf0",
+    "display_model": "LASSO-Cox",
+    "primary_for_outcome": false,
+    "hyperparameters": {
+      "l1_ratio": 1.0,
+      "path_index": 35,
+      "path_fraction": 0.7142857142857143,
+      "search_round": 1,
+      "selected_alpha_full_development": 0.0017603263053790974
+    },
+    "selection_rule": "maximum mean development-dataset LODO AUC",
+    "mean_lodo_auc": 0.6269393077999336,
+    "sd_lodo_auc": 0.0201554254613297,
+    "lodo_folds": 5,
     "features": [
       "age",
       "sex",
@@ -517,6 +923,42 @@
       "graft_type",
       "conditioning_intensity",
       "cmv"
+    ],
+    "encoded_feature_names": [
+      "num__age",
+      "cat__sex_Male",
+      "cat__sex_Female",
+      "cat__sex_Unknown",
+      "cat__kps_KPS >= 90",
+      "cat__kps_KPS < 90",
+      "cat__kps_Unknown",
+      "cat__hct_ci_HCT-CI 0-2",
+      "cat__hct_ci_HCT-CI >=3",
+      "cat__hct_ci_Unknown",
+      "cat__cytogenetics_Favorable",
+      "cat__cytogenetics_Intermediate",
+      "cat__cytogenetics_Adverse",
+      "cat__cytogenetics_Unknown",
+      "cat__mrd_Negative",
+      "cat__mrd_Positive",
+      "cat__mrd_Not assessed",
+      "cat__mrd_Unknown",
+      "cat__donor_type_Matched related",
+      "cat__donor_type_Other related or haploidentical",
+      "cat__donor_type_Matched unrelated",
+      "cat__donor_type_Other or match-unknown unrelated",
+      "cat__donor_type_Cord blood",
+      "cat__donor_type_Unknown",
+      "cat__graft_type_Peripheral blood",
+      "cat__graft_type_Bone marrow",
+      "cat__graft_type_Cord blood",
+      "cat__graft_type_Unknown",
+      "cat__conditioning_intensity_MAC",
+      "cat__conditioning_intensity_RIC/NMA",
+      "cat__conditioning_intensity_Unknown",
+      "cat__cmv_Recipient CMV negative",
+      "cat__cmv_Recipient CMV positive",
+      "cat__cmv_Unknown"
     ],
     "categorical_levels": {
       "sex": [
@@ -571,13 +1013,34 @@
         "Unknown"
       ]
     },
-    "model_file": "models/relapse_elastic_net_cox.joblib"
+    "risk_cutoffs": {
+      "low_intermediate": -0.17407547812402682,
+      "intermediate_high": 0.13932130508388357
+    },
+    "model_file": "models/relapse_elastic_net_cox.joblib",
+    "model_sha256": "6e543651a4fc923bcc4683a1929fd48349d9338fd03cad6b22c19fe8ab0fdfee",
+    "canonical_schema_sha256": "5c20f783e1dee02cb52e219d157609752c3895900b63408335a5708e1efef92f",
+    "calculator_schema_sha256": "e7636c752664914868f3b44b20b29226a25462e96805e1f4e0344d5194bb4f0f",
+    "random_seed": 20260608,
+    "training_date": "2026-10-12",
+    "fit_created_utc": "2026-10-12T11:19:23.605524+00:00"
   },
   {
+    "version": "2026.10.14-AML-cohort-endpoint-repair",
     "outcome": "Relapse",
     "model": "RSF",
-    "model_sha256": "0fd8b8bd9bfc7007107cdb1e27c8bfc9fa472168220355265b2ab0ead8a19e0a",
-    "calculator_schema_sha256": "881d5bcd34df75f4e8973ac1889eb387312e308f89babd346fe2534b7daf2cf0",
+    "display_model": "RSF",
+    "primary_for_outcome": true,
+    "hyperparameters": {
+      "n_estimators": 500,
+      "min_samples_leaf": 10,
+      "min_samples_split": 20,
+      "max_features": "sqrt"
+    },
+    "selection_rule": "one-time 5/10 vs R4.1 10/20 rule; prefer 500 trees when paired 1000-tree gain <=0.001",
+    "mean_lodo_auc": 0.6434814847065836,
+    "sd_lodo_auc": 0.0155069379995035,
+    "lodo_folds": 5,
     "features": [
       "age",
       "sex",
@@ -589,6 +1052,42 @@
       "graft_type",
       "conditioning_intensity",
       "cmv"
+    ],
+    "encoded_feature_names": [
+      "num__age",
+      "cat__sex_Male",
+      "cat__sex_Female",
+      "cat__sex_Unknown",
+      "cat__kps_KPS >= 90",
+      "cat__kps_KPS < 90",
+      "cat__kps_Unknown",
+      "cat__hct_ci_HCT-CI 0-2",
+      "cat__hct_ci_HCT-CI >=3",
+      "cat__hct_ci_Unknown",
+      "cat__cytogenetics_Favorable",
+      "cat__cytogenetics_Intermediate",
+      "cat__cytogenetics_Adverse",
+      "cat__cytogenetics_Unknown",
+      "cat__mrd_Negative",
+      "cat__mrd_Positive",
+      "cat__mrd_Not assessed",
+      "cat__mrd_Unknown",
+      "cat__donor_type_Matched related",
+      "cat__donor_type_Other related or haploidentical",
+      "cat__donor_type_Matched unrelated",
+      "cat__donor_type_Other or match-unknown unrelated",
+      "cat__donor_type_Cord blood",
+      "cat__donor_type_Unknown",
+      "cat__graft_type_Peripheral blood",
+      "cat__graft_type_Bone marrow",
+      "cat__graft_type_Cord blood",
+      "cat__graft_type_Unknown",
+      "cat__conditioning_intensity_MAC",
+      "cat__conditioning_intensity_RIC/NMA",
+      "cat__conditioning_intensity_Unknown",
+      "cat__cmv_Recipient CMV negative",
+      "cat__cmv_Recipient CMV positive",
+      "cat__cmv_Unknown"
     ],
     "categorical_levels": {
       "sex": [
@@ -642,13 +1141,32 @@
         "Recipient CMV positive",
         "Unknown"
       ]
-    }
+    },
+    "risk_cutoffs": {
+      "low_intermediate": 319.4828966757115,
+      "intermediate_high": 459.13490082312785
+    },
+    "model_file": "models/relapse_rsf.joblib",
+    "model_sha256": "15fea621c9f63440539a5e9b48f62410771dcc058285bfcb7384ff956f5ccf93",
+    "canonical_schema_sha256": "5c20f783e1dee02cb52e219d157609752c3895900b63408335a5708e1efef92f",
+    "calculator_schema_sha256": "e7636c752664914868f3b44b20b29226a25462e96805e1f4e0344d5194bb4f0f",
+    "random_seed": 20260608,
+    "training_date": "2026-10-12",
+    "fit_created_utc": "2026-10-12T11:19:59.704777+00:00"
   },
   {
+    "version": "2026.10.14-AML-cohort-endpoint-repair",
     "outcome": "TRM_NRM",
     "model": "CoxPH",
-    "model_sha256": "c328020c6b0bd609ea88ef139ff3d1ae8b4c6033f8dcb1a779ea773b9ab18314",
-    "calculator_schema_sha256": "881d5bcd34df75f4e8973ac1889eb387312e308f89babd346fe2534b7daf2cf0",
+    "display_model": "CoxPH",
+    "primary_for_outcome": false,
+    "hyperparameters": {
+      "alpha": 1000.0
+    },
+    "selection_rule": "one-standard-error; prefer stronger L2 shrinkage",
+    "mean_lodo_auc": 0.6331822511076118,
+    "sd_lodo_auc": 0.0177628642404828,
+    "lodo_folds": 5,
     "features": [
       "age",
       "sex",
@@ -660,6 +1178,42 @@
       "graft_type",
       "conditioning_intensity",
       "cmv"
+    ],
+    "encoded_feature_names": [
+      "num__age",
+      "cat__sex_Male",
+      "cat__sex_Female",
+      "cat__sex_Unknown",
+      "cat__kps_KPS >= 90",
+      "cat__kps_KPS < 90",
+      "cat__kps_Unknown",
+      "cat__hct_ci_HCT-CI 0-2",
+      "cat__hct_ci_HCT-CI >=3",
+      "cat__hct_ci_Unknown",
+      "cat__cytogenetics_Favorable",
+      "cat__cytogenetics_Intermediate",
+      "cat__cytogenetics_Adverse",
+      "cat__cytogenetics_Unknown",
+      "cat__mrd_Negative",
+      "cat__mrd_Positive",
+      "cat__mrd_Not assessed",
+      "cat__mrd_Unknown",
+      "cat__donor_type_Matched related",
+      "cat__donor_type_Other related or haploidentical",
+      "cat__donor_type_Matched unrelated",
+      "cat__donor_type_Other or match-unknown unrelated",
+      "cat__donor_type_Cord blood",
+      "cat__donor_type_Unknown",
+      "cat__graft_type_Peripheral blood",
+      "cat__graft_type_Bone marrow",
+      "cat__graft_type_Cord blood",
+      "cat__graft_type_Unknown",
+      "cat__conditioning_intensity_MAC",
+      "cat__conditioning_intensity_RIC/NMA",
+      "cat__conditioning_intensity_Unknown",
+      "cat__cmv_Recipient CMV negative",
+      "cat__cmv_Recipient CMV positive",
+      "cat__cmv_Unknown"
     ],
     "categorical_levels": {
       "sex": [
@@ -714,13 +1268,35 @@
         "Unknown"
       ]
     },
-    "model_file": "models/trm_nrm_coxph.joblib"
+    "risk_cutoffs": {
+      "low_intermediate": -0.21274769227515017,
+      "intermediate_high": 0.02062569045388945
+    },
+    "model_file": "models/trm_nrm_coxph.joblib",
+    "model_sha256": "ee938975a9efbd4ef61024ff1489e06623c5cbb704480f2446e8c29c61df7ca1",
+    "canonical_schema_sha256": "5c20f783e1dee02cb52e219d157609752c3895900b63408335a5708e1efef92f",
+    "calculator_schema_sha256": "e7636c752664914868f3b44b20b29226a25462e96805e1f4e0344d5194bb4f0f",
+    "random_seed": 20260608,
+    "training_date": "2026-10-12",
+    "fit_created_utc": "2026-10-12T11:20:00.756890+00:00"
   },
   {
+    "version": "2026.10.14-AML-cohort-endpoint-repair",
     "outcome": "TRM_NRM",
     "model": "Elastic-net Cox",
-    "model_sha256": "cfda28159cb514cc50c1a5056d6a0ad84548e07746130578f77632f1516689e1",
-    "calculator_schema_sha256": "881d5bcd34df75f4e8973ac1889eb387312e308f89babd346fe2534b7daf2cf0",
+    "display_model": "LASSO-Cox",
+    "primary_for_outcome": false,
+    "hyperparameters": {
+      "l1_ratio": 1.0,
+      "path_index": 33,
+      "path_fraction": 0.673469387755102,
+      "search_round": 1,
+      "selected_alpha_full_development": 0.0018308187113417716
+    },
+    "selection_rule": "maximum mean development-dataset LODO AUC",
+    "mean_lodo_auc": 0.640609673379404,
+    "sd_lodo_auc": 0.0248116048626549,
+    "lodo_folds": 5,
     "features": [
       "age",
       "sex",
@@ -732,6 +1308,42 @@
       "graft_type",
       "conditioning_intensity",
       "cmv"
+    ],
+    "encoded_feature_names": [
+      "num__age",
+      "cat__sex_Male",
+      "cat__sex_Female",
+      "cat__sex_Unknown",
+      "cat__kps_KPS >= 90",
+      "cat__kps_KPS < 90",
+      "cat__kps_Unknown",
+      "cat__hct_ci_HCT-CI 0-2",
+      "cat__hct_ci_HCT-CI >=3",
+      "cat__hct_ci_Unknown",
+      "cat__cytogenetics_Favorable",
+      "cat__cytogenetics_Intermediate",
+      "cat__cytogenetics_Adverse",
+      "cat__cytogenetics_Unknown",
+      "cat__mrd_Negative",
+      "cat__mrd_Positive",
+      "cat__mrd_Not assessed",
+      "cat__mrd_Unknown",
+      "cat__donor_type_Matched related",
+      "cat__donor_type_Other related or haploidentical",
+      "cat__donor_type_Matched unrelated",
+      "cat__donor_type_Other or match-unknown unrelated",
+      "cat__donor_type_Cord blood",
+      "cat__donor_type_Unknown",
+      "cat__graft_type_Peripheral blood",
+      "cat__graft_type_Bone marrow",
+      "cat__graft_type_Cord blood",
+      "cat__graft_type_Unknown",
+      "cat__conditioning_intensity_MAC",
+      "cat__conditioning_intensity_RIC/NMA",
+      "cat__conditioning_intensity_Unknown",
+      "cat__cmv_Recipient CMV negative",
+      "cat__cmv_Recipient CMV positive",
+      "cat__cmv_Unknown"
     ],
     "categorical_levels": {
       "sex": [
@@ -786,13 +1398,34 @@
         "Unknown"
       ]
     },
-    "model_file": "models/trm_nrm_elastic_net_cox.joblib"
+    "risk_cutoffs": {
+      "low_intermediate": -0.17523001847144842,
+      "intermediate_high": 0.16173735990085494
+    },
+    "model_file": "models/trm_nrm_elastic_net_cox.joblib",
+    "model_sha256": "1588b466eb80a234736800368442f0a2635836a9c0682850a48f2a246f48e1f1",
+    "canonical_schema_sha256": "5c20f783e1dee02cb52e219d157609752c3895900b63408335a5708e1efef92f",
+    "calculator_schema_sha256": "e7636c752664914868f3b44b20b29226a25462e96805e1f4e0344d5194bb4f0f",
+    "random_seed": 20260608,
+    "training_date": "2026-10-12",
+    "fit_created_utc": "2026-10-12T11:20:01.037193+00:00"
   },
   {
+    "version": "2026.10.14-AML-cohort-endpoint-repair",
     "outcome": "TRM_NRM",
     "model": "RSF",
-    "model_sha256": "b8b6a073910d07b42de260719e2a82c13e045a697e8e11a991484d7acadf2b58",
-    "calculator_schema_sha256": "881d5bcd34df75f4e8973ac1889eb387312e308f89babd346fe2534b7daf2cf0",
+    "display_model": "RSF",
+    "primary_for_outcome": true,
+    "hyperparameters": {
+      "n_estimators": 500,
+      "min_samples_leaf": 5,
+      "min_samples_split": 10,
+      "max_features": 0.5
+    },
+    "selection_rule": "one-time 5/10 vs R4.1 10/20 rule; prefer 500 trees when paired 1000-tree gain <=0.001",
+    "mean_lodo_auc": 0.7004646738139493,
+    "sd_lodo_auc": 0.0571390250101452,
+    "lodo_folds": 5,
     "features": [
       "age",
       "sex",
@@ -804,6 +1437,42 @@
       "graft_type",
       "conditioning_intensity",
       "cmv"
+    ],
+    "encoded_feature_names": [
+      "num__age",
+      "cat__sex_Male",
+      "cat__sex_Female",
+      "cat__sex_Unknown",
+      "cat__kps_KPS >= 90",
+      "cat__kps_KPS < 90",
+      "cat__kps_Unknown",
+      "cat__hct_ci_HCT-CI 0-2",
+      "cat__hct_ci_HCT-CI >=3",
+      "cat__hct_ci_Unknown",
+      "cat__cytogenetics_Favorable",
+      "cat__cytogenetics_Intermediate",
+      "cat__cytogenetics_Adverse",
+      "cat__cytogenetics_Unknown",
+      "cat__mrd_Negative",
+      "cat__mrd_Positive",
+      "cat__mrd_Not assessed",
+      "cat__mrd_Unknown",
+      "cat__donor_type_Matched related",
+      "cat__donor_type_Other related or haploidentical",
+      "cat__donor_type_Matched unrelated",
+      "cat__donor_type_Other or match-unknown unrelated",
+      "cat__donor_type_Cord blood",
+      "cat__donor_type_Unknown",
+      "cat__graft_type_Peripheral blood",
+      "cat__graft_type_Bone marrow",
+      "cat__graft_type_Cord blood",
+      "cat__graft_type_Unknown",
+      "cat__conditioning_intensity_MAC",
+      "cat__conditioning_intensity_RIC/NMA",
+      "cat__conditioning_intensity_Unknown",
+      "cat__cmv_Recipient CMV negative",
+      "cat__cmv_Recipient CMV positive",
+      "cat__cmv_Unknown"
     ],
     "categorical_levels": {
       "sex": [
@@ -857,6 +1526,17 @@
         "Recipient CMV positive",
         "Unknown"
       ]
-    }
+    },
+    "risk_cutoffs": {
+      "low_intermediate": 159.97445992857394,
+      "intermediate_high": 320.6188151285412
+    },
+    "model_file": "models/trm_nrm_rsf.joblib",
+    "model_sha256": "656666000e1b5db07fe74412d15d336bc9966cf0db70f5f1e32c2b1fb890642c",
+    "canonical_schema_sha256": "5c20f783e1dee02cb52e219d157609752c3895900b63408335a5708e1efef92f",
+    "calculator_schema_sha256": "e7636c752664914868f3b44b20b29226a25462e96805e1f4e0344d5194bb4f0f",
+    "random_seed": 20260608,
+    "training_date": "2026-10-12",
+    "fit_created_utc": "2026-10-12T11:21:31.121173+00:00"
   }
 ]

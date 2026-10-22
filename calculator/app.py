@@ -223,9 +223,9 @@ st.markdown(
     """
     <div class="aml-hero">
       <h1>AML allo-HCT Research Model Explorer</h1>
-      <p>Research-only exploration of development-selected survival and cause-specific risk models.</p>
+      <p>Survival estimates and cause-specific risk rankings from the manuscript models.</p>
     </div>
-    <div class="aml-safety"><strong>Research use only.</strong> This interface is not validated or authorized for bedside treatment decisions, does not recommend treatment, and does not establish clinical utility.</div>
+    <div class="aml-safety"><strong>Research use only.</strong> For research communication and validation. Clinical use requires local recalibration and prospective evaluation.</div>
     """,
     unsafe_allow_html=True,
 )
@@ -235,9 +235,9 @@ defaults = build_default_values()
 with st.form("research_inputs", border=True):
     st.subheader("Patient-level research inputs")
     st.caption(
-        "Dropdown choices are limited to categories represented in the development data. "
-        "Missing/unknown categories remain available only where the fitted model was trained on them. "
-        "Numeric age is restricted to 18–81 completed years, the integer range observed in development."
+        "Dropdown choices reflect categories represented in the development data. "
+        "Missing/unknown categories are available where represented during model fitting. "
+        "Age is restricted to the 19–81-year integer grid within the observed development-age range."
     )
     columns = st.columns(3)
     age_spec = SCHEMA["numeric"]["age"]
@@ -296,7 +296,7 @@ if low_support:
 st.subheader("Research outputs")
 st.caption(
     "Percentiles and strata are relative to the development-score distribution. "
-    "They are not treatment thresholds and do not provide individual-prediction confidence intervals."
+    "These descriptive groups are not treatment thresholds. Individual-prediction confidence intervals are unavailable."
 )
 st.html(
     f"""
@@ -357,7 +357,7 @@ def render_outcome_card(outcome: str) -> str:
             <div class="aml-score-label">Cause-specific risk score</div>
             <div class="aml-score-value">{value:.3f}</div>
           </div>
-          <div class="aml-ranking-note"><strong>Relative ranking only.</strong> This score is not an absolute event probability or cumulative-incidence estimate.</div>
+          <div class="aml-ranking-note"><strong>Relative ranking only.</strong> Higher scores indicate greater cause-specific risk. Scores do not estimate absolute event probability or cumulative incidence.</div>
         """
         card_class = "ranking"
         output_type = "Ranking output"

@@ -265,7 +265,22 @@ def validate_model_schema_contract() -> dict[str, object]:
     }
 
 
+def validate_input_row(row: pd.DataFrame) -> None:
+    """Enforce the same supported, single-profile inputs as the research UI."""
+    if list(row.columns) != FEATURES or len(row) != 1:
+        raise ValueError("Expected one profile in the published feature order")
+    values = row.iloc[0]
+    age = float(values["age"])
+    specification = SCHEMA["numeric"]["age"]
+    if not np.isfinite(age) or not age.is_integer() or not specification["min"] <= age <= specification["max"]:
+        raise ValueError("Age must be an integer from 19 through 81 years")
+    for feature in CATEGORICAL:
+        if values[feature] not in SCHEMA["categorical"][feature]["options"]:
+            raise ValueError(f"Unsupported input category: {feature}")
+
+
 def model_score(model, row: pd.DataFrame) -> float:
+    validate_input_row(row)
     if isinstance(model, CompactRSF):
         value = float(model.predict_outputs(row)[0])
     else:
@@ -278,6 +293,7 @@ def model_score(model, row: pd.DataFrame) -> float:
 def survival_estimates(
     model, row: pd.DataFrame, times: tuple[float, ...] = (12.0, 24.0, 36.0)
 ) -> list[float]:
+    validate_input_row(row)
     if isinstance(model, CompactRSF):
         compact_times = tuple(float(value) for value in model.payload["horizons"])
         if tuple(times) != compact_times:
